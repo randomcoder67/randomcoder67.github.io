@@ -34,3 +34,4 @@ jobs:
               with:
                 email: ${{ secrets.EMAIL }}
                 build_dir: rendered/
+                branch: gh-pages
