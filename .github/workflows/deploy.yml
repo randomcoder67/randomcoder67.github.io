@@ -32,7 +32,7 @@ jobs:
                 git config --local user.email "action@github.com"
                 git config --local user.name "GitHub Action"
 
-                git add checkout -b gh-pages
+                git checkout -b gh-pages
                 git add rendered/
                 git commit -m "Rendered markdown files"
                 git push origin gh-pages
