@@ -24,8 +24,8 @@ jobs:
             
             - name: Render to markdown
               run: |
-                mkdir -p renderer
-                markdown_py -o rendered/ main/**/*.md
+                mkdir -p rendered
+                markdown_py -f rendered/thing.html main/thing.md
 
             - name: Commit and push cahnges
               run: |
