@@ -32,5 +32,5 @@ jobs:
               env:
                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
               with:
-                email: username@domain.tld
+                email: ${{ secrets.EMAIL }}
                 build_dir: rendered/
