@@ -1,0 +1,38 @@
+on:
+    push:
+        branches:
+            - main
+
+name: test-thing
+
+jobs:
+    checkout-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@main
+              
+            - name: Set up python
+              uses: actions/setup-python@v2
+              with: 
+                python-version: 3.x
+
+            - name: Install dependancies
+              run: |
+                python -m pip install --upgrade pip
+                pip install markdown_py
+            
+            - name: Render to markdown
+              run: |
+                mkdir -p renderer
+                markdown_py -o rendered/ main/**/*.md
+
+            - name: Commit and push cahnges
+              run: |
+                git confit --local user.email "action@github.com"
+                git config --local user.name "GitHub Action"
+
+                git add checkout -b gh-pages
+                git add rendered/
+                git commit -m "Rendered markdown files"
+                git push origin gh-pages
