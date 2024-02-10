@@ -28,11 +28,9 @@ jobs:
                 markdown_py -f rendered/thing.html main/thing.md
 
             - name: Commit and push cahnges
-              run: |
-                git config --local user.email "action@github.com"
-                git config --local user.name "GitHub Action"
-
-                git checkout -b gh-pages
-                git add rendered/
-                git commit -m "Rendered markdown files"
-                git push origin gh-pages
+                  uses: Cecilapp/GitHub-Pages-deploy@v3
+                  env:
+                    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  with:
+                    email: username@domain.tld
+                    build_dir: rendered/
