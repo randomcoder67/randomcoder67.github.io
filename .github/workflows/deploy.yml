@@ -25,7 +25,9 @@ jobs:
             - name: Render to markdown
               run: |
                 mkdir -p rendered
-                markdown_py -f rendered/thing.html main/thing.md
+                cd renderer
+                make
+                ./gorender -f ../content ../output
 
             - name: Commit and push cahnges
               uses: Cecilapp/GitHub-Pages-deploy@v3
