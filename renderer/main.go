@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 )
 
-const CSS_FILE_LOCATION = "/Programs/website/renderer/style.css"
+const CSS_FILE_LOCATION = "./style.css"
 
 type Options struct {
 	Folder     bool

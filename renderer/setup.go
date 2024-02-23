@@ -89,6 +89,7 @@ func renderFolder(dirName string, outputDir string) {
 		fmt.Println("Error, not a directory")
 		os.Exit(1)
 	}
+
 	
 	// Check outputDir has a slash
 	if outputDir[len(outputDir)-1] != '/' {
@@ -100,7 +101,8 @@ func renderFolder(dirName string, outputDir string) {
 	}
 	// Copy style.css there
 	homeDir, _ := os.UserHomeDir()
-	source, err := os.Open(homeDir + CSS_FILE_LOCATION)
+	_ = homeDir
+	source, err := os.Open(CSS_FILE_LOCATION)
 	if err != nil {
 		panic(err)
 	}
