@@ -95,6 +95,11 @@ func renderFolder(dirName string, outputDir string) {
 	if outputDir[len(outputDir)-1] != '/' {
 		outputDir = outputDir + "/"
 	}
+
+	// Check inputDir has a slash
+	if dirName[len(dirName)-1] != '/' {
+		dirName = dirName + "/"
+	}
 	// Make the "new root" directory
 	if isFileOrDir(outputDir) != TYPE_DIR {
 		os.Mkdir(outputDir, os.ModePerm)
