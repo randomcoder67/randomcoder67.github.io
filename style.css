@@ -1,0 +1,276 @@
+body {
+    background-color: #2b2b2b; /* 3b3e3f 16181c */
+    /* color: #e7e9ea; */
+    /* color: #f2f2f2; */
+    color: #fff;
+    /* font-family: Verdana, sans-serif; */
+    margin: auto;
+}
+
+a {
+	text-decoration: none;
+	/* color: #b6b3eb; */
+	/* color: #0645ad; */
+	color: #33bbff;
+	background: none;
+	text-decoration: none;
+}
+
+szaza:not([href]) {
+	cursor: pointer;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+li {
+	margin-bottom: 0.1em;
+}
+
+h1 {
+    color: #da4939;
+	text-align: center;
+    /*  border-bottom: 2px solid #1a1a1a; */
+}
+
+h2 {
+	font-size: 24;
+	color: #DD8853;
+	font-weight: bold;
+    /* text-align: left; */
+	/* border-bottom: 1px solid #1a1a1a; */
+}
+
+h3 {
+	color: #ffc66d;
+	font-weight: bold;
+	font-size: 19;
+}
+
+h4 {
+	color: #a5c261;
+	font-weight: bold;
+	font-size: 16;
+}
+
+h5 {
+	font-weight: bold;
+	color: #6d9cbe;
+}
+
+h6 {
+	font-weight: bold;
+	color: #b6b3eb;
+}
+
+pre, code {
+	background: #343942;
+	page-break-inside: avoid;
+	font-family: monospace;
+	font-size: 105%;
+	margin: 0;
+	max-width: 100%;
+	/* width: fit-content; */
+	/* display: table; */
+	overflow: auto;
+	padding: 0.2em 0.4em;
+	word-wrap: break-word;
+	border-radius: 6px;
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.content img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+
+/* topnav */
+
+.topnav {
+    overflow: hidden;
+    border-style: solid;
+    border-width: 0px 0px 4px 0px;
+    margin: auto;
+    /* border-color: #1a1a1a; */
+    width: 100%;
+    max-width: 1000px;
+    color: #000000;
+}
+
+.topnav .title {
+    float: left;
+    color: #da4939;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Sans-serif;
+    vertical-align: bottom;
+}
+
+.topnav .text {
+    float: right;
+    color: #ffc66d;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Sans-serif;
+    vertical-align: bottom;
+}
+
+.topnav .githubLogo {
+    float: right;
+    color: #f2f2f2;
+    padding: 5px 5px 5px 5px;
+    display: inline;
+    text-decoration: none;
+    font-size: large;
+    vertical-align: bottom;
+}
+
+.topnav .youtubeLogo {
+    float: right;
+    color: #f2f2f2;
+    padding: 6px 5px 5px 5px;
+    display: inline;
+    text-decoration: none;
+    font-size: large;
+    vertical-align: bottom;
+}
+
+/* Link Image List */
+
+#linklist {
+	padding-left: 0;
+	text-align: center;
+}
+
+#linklist li {
+	display: inline-block;
+	height: 150px;
+	width: 150px;
+	position: relative;
+}
+
+#linklist li a {
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+
+#linklist img {
+	height: 80%;
+	width: 80%;
+	max-height: none;
+	max-width: none;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+#linklist .title, #linklist li:hover .desc {
+	display: block;
+	position: absolute;
+	color: white;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 1em;
+	font-size: large;
+}
+
+#linklist .title {
+	font-size: xx-large;
+	background-color: rgba(3,3,3,0.6);
+}
+
+#linklist li:hover .desc {
+	background-color: rgba(3,3,3,0.9);
+}
+	
+#linklist li:hover .title, .desc, .tags {
+	display: none;
+}
+
+/* Info Box */
+
+.infobox {
+    border: 1px solid #f2f2f2;
+    border-spacing: 3px;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    margin: 0.5em 0 0.5em 1em;
+    padding: 0.2em;
+    float: right;
+    clear: right;
+    font-size: 88%;
+    line-height: 1.5em;
+}
+
+.infobox caption {
+    font-size: 200%;
+    font-weight: bold;
+    padding: 0.2em;
+    text-align: center;
+}
+
+/* Table of Contents */
+
+#toc, .toc {
+	display: table;
+	padding: 7px;
+	border: 1px solid #a2a9b1;
+	background-color: #f8f9fa;
+	font-size: 95%;
+}
+
+#toc #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle {
+	direction: ltr;
+	text-align: center;
+}
+
+#toc ul, .toc ul {
+    list-style-type: none;
+    list-style-image: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+.toctext {
+	display: table-cell;
+	text-decoration: inherit;
+}
+
+.tocnumber {
+	color: #222;
+	display: table-cell;
+	text-decoration: inherit;
+	padding-left: 0;
+	padding-right: 0.5em;
+}
+
+.toctoggle {
+	font-size: 94%;
+	user-select: none;
+}
+
+#toc h2, .toc h2 {
+	display: inline;
+	border: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+#toc ul ul, .toc ul ul {
+	margin: 0 0 0 2em;
+}
