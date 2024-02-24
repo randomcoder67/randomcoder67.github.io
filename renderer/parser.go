@@ -8,6 +8,8 @@ import (
 	"encoding/json"
 )
 
+var _ = fmt.Println
+
 type Gallery struct {
 	ast.Leaf
 	ImageURLS []string
@@ -81,7 +83,7 @@ func parseImgLink(data []byte) (ast.Node, []byte, int) {
 		res.Links = append(res.Links, bits[2])
 	}
 	
-	fmt.Printf("%+v\n", res)
+	//fmt.Printf("%+v\n", res)
 	
 	return res, nil, end
 }

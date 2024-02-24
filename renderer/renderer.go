@@ -28,7 +28,7 @@ func renderContentsRecursive(curHeadings []Heading) {
 		contents += "\n\t\t\t<a>"
 		
 		var levelString string = ""
-		fmt.Println("Headings:", curHeadings)
+		//fmt.Println("Headings:", curHeadings)
 		currentHeading[heading.Level-1]++
 		for i:=0; i<heading.Level; i++ {
 			levelString = levelString + strconv.Itoa(currentHeading[i]) + "."

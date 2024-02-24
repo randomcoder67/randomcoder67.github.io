@@ -93,7 +93,7 @@ func printHelp() {
 
 func main() {
 	opt := parseArgs(os.Args[1:])
-	fmt.Printf("%+v\n", opt)
+	//fmt.Printf("%+v\n", opt)
 	
 	
 	if opt.Folder {
@@ -101,7 +101,7 @@ func main() {
 	} else {
 		renderFile(opt.InputName, opt.OutputName, 0)
 	}
-	fmt.Println("BACK IN MAIN\n\n")
+	//fmt.Println("BACK IN MAIN\n\n")
 	_ = json.MarshalIndent
 	//thing, _ := json.MarshalIndent(headings, "", "  ")
 	//fmt.Println(string(thing))

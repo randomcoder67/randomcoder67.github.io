@@ -56,8 +56,11 @@ func mdToHTML(md []byte) []byte {
 }
 
 func renderFile(inputFile string, outputFile string, level int) {
+	headings = []Heading{}
+	currentHeading = []int{0,0,0,0,0,0}
+
 	// Open file
-	fmt.Println(inputFile)
+	fmt.Println("Rendering:", inputFile)
 	mds, _ := os.ReadFile(inputFile)
 	// Convert markdown to html
 	md := []byte(mds)
@@ -125,7 +128,7 @@ func renderFolder(dirName string, outputDir string) {
 	// Recursive function to go through given folder and subfolders
 	var listInDir func (string, int)
 	listInDir = func(dirNameCur string, level int) {
-		fmt.Println(level)
+		//fmt.Println(level)
 		files, err := ioutil.ReadDir(dirNameCur)
 		if err != nil {
 			panic(err)
