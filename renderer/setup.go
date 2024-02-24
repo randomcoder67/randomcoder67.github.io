@@ -70,7 +70,7 @@ func renderFile(inputFile string, outputFile string, level int) {
 	finalHTML.WriteString(TITLE_START)
 	finalHTML.WriteString(strings.Repeat("../", level))
 	finalHTML.WriteString(TITLE_MIDDLE)
-	finalHTML.WriteString("Test Title")
+	finalHTML.WriteString(headings[0].title)
 	finalHTML.WriteString(TITLE_END)
 	finalHTML.WriteString(NAV_BAR)
 	finalHTML.WriteString(CONTENT_START)

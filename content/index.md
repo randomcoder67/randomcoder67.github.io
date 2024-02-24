@@ -1,10 +1,8 @@
-# randomcoder67 Website - Wiki - Blog
+# randomcoder67 Website - Wiki
 
 ## Introduction
 
 ![Picture of Me (Felonious Gru from Despicable Me)](images/felonious_gru.webp)
-
-Me
 
 ## Sections
 
@@ -19,47 +17,10 @@ Me
 	* Coding
 	* Other
 
-## External Links
-
-* Github
-* YouTube
-* RideWithGPS
-
 ## Recent Posts
 
 ### Blog
 
-#### Cycling
-
-This is where cycling stuff will go
-
-##### Bike Building
-
-Bike building stuff
-
-##### Cycling
-
-Cycling stuff
-
-### Wiki
-
-#### My Stuff
-
-##### Rust
-
-Rust programs
-
-##### Golang
-
-Golang programs 
-
-###### GoTube
-
-GoTube wiki infomation page
-
-#### Other Stuff
-
-This is where other stuff will go
 
 
 

@@ -38,6 +38,7 @@ h2 {
 	font-size: 24;
 	color: #DD8853;
 	font-weight: bold;
+	text-align: center;
     /* text-align: left; */
 	/* border-bottom: 1px solid #1a1a1a; */
 }
@@ -46,6 +47,7 @@ h3 {
 	color: #ffc66d;
 	font-weight: bold;
 	font-size: 19;
+	text-align: center;
 }
 
 h4 {
