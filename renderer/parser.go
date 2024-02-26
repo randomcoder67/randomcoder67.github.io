@@ -16,6 +16,14 @@ type CustomDiv struct {
 	Class    string
 }
 
+type InfoBox struct {
+	ast.Leaf
+	Title   string
+	Image   string
+	Caption string
+	Data    [][]string
+}
+
 type ImgLink struct {
 	ast.Leaf
 	ImageURLs []string
@@ -118,9 +126,29 @@ func parseImgLink(data []byte) (ast.Node, []byte, int) {
 }
 
 func parseInfobox(data []byte) (ast.Node, []byte, int) {
-	res := &CustomDiv{
+	i := len(infobox)
+	end := bytes.Index(data[i:], []byte("\n\n"))
+	if end < 0 {
+		return nil, data, 0
 	}
-	var end int = 0
+	end = end + i
+
+	split := strings.Split(string(data[i:end]), "\n")
+	res := &InfoBox{}
+
+	for _, line := range split {
+		if line[:6] == "title:" {
+			res.Title = line[7:]
+		} else if line [:4] == "img:" {
+			res.Image = line[5:]
+		} else if line [:8] == "caption:" {
+			res.Caption = line[9:]
+		} else {
+			parts := strings.Split(line, "|")
+			res.Data = append(res.Data, []string{parts[0], parts[1]})
+		}
+	}
+	
 	return res, nil, end
 }
 

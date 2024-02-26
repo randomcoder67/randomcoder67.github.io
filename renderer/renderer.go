@@ -4,6 +4,7 @@ import (
 	"io"
 	"github.com/gomarkdown/markdown/ast"
 	"strconv"
+	"strings"
 	"fmt"
 	"os"
 	"image"
@@ -63,10 +64,6 @@ func renderContents() string {
 	return contents
 }
 
-func renderInfoBox() string {
-	return ""
-}
-
 func myRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bool) {
 	if text, ok := node.(*ast.Link); ok {
 		renderLinkHTMLExtension(w, text, entering)
@@ -86,6 +83,10 @@ func myRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bo
 	}
 	if customDiv, ok := node.(*CustomDiv); ok {
 		renderCustomDiv(w, customDiv, entering)
+		return ast.GoToNext, true
+	}
+	if infobox, ok := node.(*InfoBox); ok {
+		renderInfoBox(w, infobox, entering)
 		return ast.GoToNext, true
 	}
 	if img, ok := node.(*ast.Image); ok {
@@ -232,3 +233,43 @@ func renderCustomDiv(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus,
 	return ast.GoToNext, false
 }
 
+func renderInfoBox(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bool) {
+	if _, ok := node.(*InfoBox); ok {
+		if entering {
+			data, _ := node.(*InfoBox)
+			io.WriteString(w, "<table class=\"infobox\">\n")
+			io.WriteString(w, "<caption>" + data.Title + "</caption>\n")
+			io.WriteString(w, "<tbody>\n")
+
+
+			if data.Image != "" {
+				width, height := getImageDimensions("../content/" + data.Image)
+				
+				io.WriteString(w, "<tr>\n")
+				io.WriteString(w, "<td class=\"image_caption\" colspan=\"2\">\n")
+				io.WriteString(w, "<img alt=\"" + data.Caption + "\" src=\"" + data.Image + "\" width=\"" + strconv.Itoa(width) + "\" width=\"" + strconv.Itoa(height) + "\">\n")
+				io.WriteString(w, "<div>" + data.Caption + "</div>\n")
+				io.WriteString(w, "</td>\n")
+				io.WriteString(w, "</tr>\n")
+			}
+
+			for _, dataPoint := range data.Data {
+				io.WriteString(w, "<tr>\n")
+				io.WriteString(w, "<td class=\"item\">" + dataPoint[0] + "</td>\n")
+				var content string = dataPoint[1]
+				if content[0] == '[' {
+					var text string = strings.Split(content[1:], "]")[0]
+					var link string = strings.Split(strings.Split(content, "(")[1], ")")[0]
+					content = fmt.Sprintf("<a href=\"%s\">%s</a>", link, text)
+				}
+				io.WriteString(w, "<td>" + content + "</td>\n")
+				io.WriteString(w, "</tr>\n")
+			}
+
+			io.WriteString(w, "</tbody>\n")
+			io.WriteString(w, "</table>\n")
+		}
+		return ast.GoToNext, true
+	}
+	return ast.GoToNext, false
+}
