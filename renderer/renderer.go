@@ -196,9 +196,13 @@ func imgLinkRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatu
 			io.WriteString(w, "<ul id=\"linklist\">")
 			
 			for i, img := range node.(*ImgLink).ImageURLs {
-				var altText string = node.(*ImgLink).AltText[i]
+				var titleText string = node.(*ImgLink).TitleText[i]
+				var hoverText string = node.(*ImgLink).HoverText[i]
 				var link string = node.(*ImgLink).Links[i]
-				var fullString string = "<li><a href=\"" + link + "\"> <img src=\"" + img + "\"> <span class=\"title\">" + altText + "</span><span class=\"desc\">Test</span></a></li>"
+				if link[len(link)-3:] == ".md" {
+					link = link[:len(link)-3] + ".html"
+				}
+				var fullString string = "<li><a href=\"" + link + "\"> <img src=\"" + img + "\"> <span class=\"title\">" + titleText + "</span><span class=\"desc\">" + hoverText + "</span></a></li>\n"
 				io.WriteString(w, fullString)
 			}
 			

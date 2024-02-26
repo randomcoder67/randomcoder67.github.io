@@ -18,7 +18,8 @@ type Gallery struct {
 type ImgLink struct {
 	ast.Leaf
 	ImageURLs []string
-	AltText   []string
+	TitleText []string
+	HoverText []string
 	Links     []string
 	Size      string
 	Align     string
@@ -79,8 +80,9 @@ func parseImgLink(data []byte) (ast.Node, []byte, int) {
 	for i:=contentLoc; i<len(parts); i++ {
 		bits := strings.Split(parts[i], "|")
 		res.ImageURLs = append(res.ImageURLs, bits[0])
-		res.AltText = append(res.AltText, bits[1])
-		res.Links = append(res.Links, bits[2])
+		res.TitleText = append(res.TitleText, bits[1])
+		res.HoverText = append(res.HoverText, bits[2])
+		res.Links = append(res.Links, bits[3])
 	}
 	
 	//fmt.Printf("%+v\n", res)
