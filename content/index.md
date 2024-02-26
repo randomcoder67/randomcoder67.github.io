@@ -27,7 +27,7 @@ This is my website
 
 \imglink
 {"size":"30%", "align":"center"}
-test1.png|test1|test1.html
-test2.png|test2|test2.html
-test3.png|test3|test3.html
+test1.png|test1|test1 hover|test1.md
+test2.png|test2|test2 hover|test2.md
+test3.png|test3|test3 hover|test3.md
 

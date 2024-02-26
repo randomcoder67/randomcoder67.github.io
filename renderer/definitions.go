@@ -33,11 +33,11 @@ const INFOBOX_END string = `	</tbody>
 </table>`
 
 const NAV_BAR string = `<div class="topnav">
-    <a href="index.html" class="title">randomcoder67</a>
-    <a href="https://youtube.com" class="youtubeLogo"><img src="logos/youtubeFullColour.png" alt="YouTube Logo" width="40" height="auto" class="youtubeLogo"></a>
-    <a href="https://github.com/randomcoder67" class="githubLogo"><img src="logos/github-mark-white.png" alt="GitHub Logo" width="32" height="auto" class="githubLogo"></a>
-    <a href="about.html" class="text">About</a>
-    <a href="wiki/mainpage.html" class="text">Wiki</a>
+    <a href="/index.html" class="title">randomcoder67</a>
+    <a href="https://youtube.com" class="youtubeLogo"><img src="/logos/youtubeFullColour.png" alt="YouTube Logo" width="40" height="auto" class="youtubeLogo"></a>
+    <a href="https://github.com/randomcoder67" class="githubLogo"><img src="/logos/github-mark-white.png" alt="GitHub Logo" width="32" height="auto" class="githubLogo"></a>
+    <a href="/about.html" class="text">About</a>
+    <a href="/wiki/mainpage.html" class="text">Wiki</a>
     <a href="#" class="text">Travel</a>
     <a href="#" class="text">Cycling</a>
     <a href="#" class="text">Guides</a>
