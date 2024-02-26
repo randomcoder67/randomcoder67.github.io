@@ -21,7 +21,7 @@ a:not([href]) {
 }
 
 a:hover {
-	text-decoration: underline;
+	/* text-decoration: underline; */
 }
 
 li {
@@ -167,7 +167,8 @@ pre, code {
 #linklist li a {
 	height: 100%;
 	width: 100%;
-	display: block;
+	display: inline-block;
+	vertical-align: top;
 }
 
 #linklist img {
@@ -181,24 +182,26 @@ pre, code {
 }
 
 #linklist .title, #linklist li:hover .desc {
-	display: block;
-	position: absolute;
+	display: flex;
 	color: white;
-	width: 100%;
+	/* width: 100%; */
 	text-align: center;
-	top: 50%;
-	transform: translateY(-50%);
-	border-radius: 1em;
+	vertical-align: middle;
+	align-items: center;
+	justify-content: center;
+	top: 80%;
+	position: relative;
 	font-size: large;
+	height: 50px;
 }
 
 #linklist .title {
 	font-size: xx-large;
-	background-color: rgba(3,3,3,0.6);
+	/* background-color: #6d9cbe; */
 }
 
 #linklist li:hover .desc {
-	background-color: rgba(3,3,3,0.9);
+	background-color: #6d9cbe;
 }
 	
 #linklist li:hover .title, .desc, .tags {
