@@ -19,12 +19,6 @@
 
 ## Recent Posts
 
-### Blog
-
-
-
-
-
 
 
 ## Content
