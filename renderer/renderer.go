@@ -84,6 +84,10 @@ func myRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bo
 		imgLinkRenderHook(w, imgLink, entering)
 		return ast.GoToNext, true
 	}
+	if customDiv, ok := node.(*CustomDiv); ok {
+		renderCustomDiv(w, customDiv, entering)
+		return ast.GoToNext, true
+	}
 	if img, ok := node.(*ast.Image); ok {
 		imgRenderHook(w, img, entering)
 		return ast.GoToNext, true
@@ -212,3 +216,19 @@ func imgLinkRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatu
 	}
 	return ast.GoToNext, false
 }
+
+func renderCustomDiv(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bool) {
+	if _, ok := node.(*CustomDiv); ok {
+		if entering {
+			data, _ := node.(*CustomDiv)
+			if data.End {
+				io.WriteString(w, "</div>\n")
+			} else {
+				io.WriteString(w, "<div class=\"" + data.Class + "\">")
+			}
+		}
+		return ast.GoToNext, true
+	}
+	return ast.GoToNext, false
+}
+

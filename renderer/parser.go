@@ -10,9 +10,10 @@ import (
 
 var _ = fmt.Println
 
-type Gallery struct {
+type CustomDiv struct {
 	ast.Leaf
-	ImageURLS []string
+	End      bool
+	Class    string
 }
 
 type ImgLink struct {
@@ -32,14 +33,38 @@ type ImgLinkOptions struct {
 
 var imgLink = []byte("\\imglink\n")
 var infobox = []byte("\\infobox\n")
+var customDiv = []byte("\\customDiv ")
 
 func parseVarious(data []byte) (ast.Node, []byte, int) {
 	if bytes.HasPrefix(data, imgLink) {
 		return parseImgLink(data)
 	} else if bytes.HasPrefix(data, infobox) {
 		return parseInfobox(data)
+	} else if bytes.HasPrefix(data, customDiv) {
+		return parseCustomDiv(data)
 	}
 	return nil, nil, 0
+}
+
+func parseCustomDiv(data []byte) (ast.Node, []byte, int) {
+	i := len(customDiv)
+	end := bytes.Index(data[i:], []byte("\n\n"))
+	if end < 0 {
+		return nil, data, 0
+	}
+	end = end + i
+
+	split := strings.Split(string(data[i:end]), " ")
+	res := &CustomDiv{}
+	
+	if len(split) == 1 {
+		res.End = true
+	} else {
+		res.End = false
+		res.Class = split[1]
+	}
+	
+	return res, nil, end
 }
 
 func parseImgLink(data []byte) (ast.Node, []byte, int) {
@@ -48,7 +73,9 @@ func parseImgLink(data []byte) (ast.Node, []byte, int) {
 	if end < 0 {
 		return nil, data, 0
 	}
+	
 	end = end + i
+	
 	lines := string(data[i:end])
 	parts := strings.Split(lines, "\n")
 	
@@ -91,8 +118,9 @@ func parseImgLink(data []byte) (ast.Node, []byte, int) {
 }
 
 func parseInfobox(data []byte) (ast.Node, []byte, int) {
-	res := &Gallery{
+	res := &CustomDiv{
 	}
 	var end int = 0
 	return res, nil, end
 }
+
