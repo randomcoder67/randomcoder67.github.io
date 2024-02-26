@@ -5,12 +5,18 @@ import (
 	"github.com/gomarkdown/markdown/ast"
 	"strconv"
 	"fmt"
+	"os"
+	"image"
+	_ "golang.org/x/image/webp"
+	_ "image/jpeg"
+	_ "image/png"
 )
 
 var _ = fmt.Println
 
 var headings = []Heading{}
 var inHeading bool = false
+var inImage bool = false
 var headingLevel int = 1
 var currentHeading []int = []int{0,0,0,0,0,0}
 var contents = ""
@@ -78,7 +84,40 @@ func myRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bo
 		imgLinkRenderHook(w, imgLink, entering)
 		return ast.GoToNext, true
 	}
+	if img, ok := node.(*ast.Image); ok {
+		imgRenderHook(w, img, entering)
+		return ast.GoToNext, true
+	}
 	return ast.GoToNext, false
+}
+
+func getImageDimensions(link string) (int, int) {
+	reader, err := os.Open(link)
+	if err != nil {
+		panic(err)
+	}
+	defer reader.Close()
+	
+	im, _, err := image.DecodeConfig(reader)
+	if err != nil {
+		panic(err)
+	}
+	return im.Width, im.Height
+}
+
+
+func imgRenderHook(w io.Writer, p *ast.Image, entering bool) {
+	if entering {
+		inImage = true
+		var altText string = string(p.Children[0].AsLeaf().Literal)
+		var link string = string(p.Destination)
+		
+		width, height := getImageDimensions("../content/" + link)
+		
+		fmt.Fprintf(w, "<img src=\"%s\" alt=\"%s\" width=\"%d\" height=\"%d\">", link, altText, width, height)
+	} else {
+		inImage = false
+	}
 }
 
 // Function to render links, renders normally except changes .md extension to .html extension
@@ -116,6 +155,9 @@ func renderHeading(w io.Writer, p *ast.Heading, entering bool) {
 
 // Text rendering function, works normally except if the text is a heading, in which case appends the heading to the heading array
 func renderText(w io.Writer, p *ast.Text) {
+	if inImage {
+		return
+	}
 	var textString string = string(p.Literal)
 	io.WriteString(w, textString)
 	if inHeading {
