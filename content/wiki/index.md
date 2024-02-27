@@ -11,7 +11,6 @@ This section of my website is a wiki-style database of infomation about my own p
 | :-: | :-: | :-: |
 | [GoTube Terminal YouTube Client](myprograms/gotube.md) |  |  |
 
-
 ### Other Programs
 
 | :-: | :-: | :-: |

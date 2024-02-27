@@ -87,7 +87,6 @@ func renderFile(inputFile string, outputFile string, level int) {
 	var htmlString string = finalHTML.String()
 	if strings.Contains(outputFile, "/wiki/") {
 		var contents string = renderContents()
-		oldString := htmlString
 		htmlString = strings.Replace(htmlString, "<h2", contents + "\n<h2", 1)
 	}
 	
