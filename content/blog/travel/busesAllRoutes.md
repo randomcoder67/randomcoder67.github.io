@@ -32,3 +32,4 @@ I'm going to research the bus routes for all 7 of Scotland's Cities. My closest 
 /images/buses/aberdeenCoatOfArms.webp|Aberdeen|Aberdeen Buses|busesAberdeen.md
 /images/buses/invernessCoatOfArms.webp|Inverness|Aberdeen Buses|busesInverness.md
 
+\tags travel,content,buses

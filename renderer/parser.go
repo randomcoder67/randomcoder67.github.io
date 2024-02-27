@@ -16,6 +16,10 @@ type CustomDiv struct {
 	Class    string
 }
 
+type Tags struct {
+	ast.Leaf
+}
+
 type InfoBox struct {
 	ast.Leaf
 	Title   string
@@ -40,6 +44,7 @@ type ImgLinkOptions struct {
 }
 
 var imgLink = []byte("\\imglink\n")
+var tags = []byte("\\tags ")
 var infobox = []byte("\\infobox\n")
 var customDiv = []byte("\\customDiv ")
 
@@ -50,6 +55,8 @@ func parseVarious(data []byte) (ast.Node, []byte, int) {
 		return parseInfobox(data)
 	} else if bytes.HasPrefix(data, customDiv) {
 		return parseCustomDiv(data)
+	} else if bytes.HasPrefix(data, tags) {
+		return parseTags(data)
 	}
 	return nil, nil, 0
 }
@@ -149,6 +156,18 @@ func parseInfobox(data []byte) (ast.Node, []byte, int) {
 		}
 	}
 	
+	return res, nil, end
+}
+
+func parseTags(data []byte) (ast.Node, []byte, int) {
+	i := len(infobox)
+	end := bytes.Index(data[i:], []byte("\n"))
+	if end < 0 {
+		return nil, data, 0
+	}
+	end = end + i
+
+	res := &Tags{}
 	return res, nil, end
 }
 

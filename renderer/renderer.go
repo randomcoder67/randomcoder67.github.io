@@ -93,6 +93,9 @@ func myRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bo
 		imgRenderHook(w, img, entering)
 		return ast.GoToNext, true
 	}
+	if _, ok := node.(*Tags); ok {
+		return ast.GoToNext, true
+	}
 	return ast.GoToNext, false
 }
 
