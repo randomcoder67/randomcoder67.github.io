@@ -122,7 +122,7 @@ func imgRenderHook(w io.Writer, p *ast.Image, entering bool) {
 		
 		width, height := getImageDimensions("../content/" + link)
 		
-		fmt.Fprintf(w, "<img src=\"%s\" alt=\"%s\" width=\"%d\" height=\"%d\">", link, altText, width, height)
+		fmt.Fprintf(w, "<img src=\"%s\" alt=\"%s\" width=\"%d\" height=\"%d\">\n", link, altText, width, height)
 	} else {
 		inImage = false
 	}
@@ -138,7 +138,7 @@ func renderLinkHTMLExtension(w io.Writer, p *ast.Link, entering bool) {
 		}
 		io.WriteString(w, "<a href=\"" + link + "\" target=\"_self\">")
 	} else {
-		io.WriteString(w, "</a>")
+		io.WriteString(w, "</a>\n")
 	}
 }
 
@@ -156,7 +156,7 @@ func renderHeading(w io.Writer, p *ast.Heading, entering bool) {
 		io.WriteString(w, "<h" + level + " id=" + p.HeadingID + ">")
 		inHeading = true
 	} else {
-		io.WriteString(w, "</h" + level + ">")
+		io.WriteString(w, "</h" + level + ">\n")
 		inHeading = false
 	}
 }
@@ -201,7 +201,7 @@ func renderText(w io.Writer, p *ast.Text) {
 func imgLinkRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bool) {
 	if _, ok := node.(*ImgLink); ok {
 		if entering {
-			io.WriteString(w, "<ul id=\"linklist\">")
+			io.WriteString(w, "<ul id=\"linklist\">\n")
 			
 			for i, img := range node.(*ImgLink).ImageURLs {
 				var titleText string = node.(*ImgLink).TitleText[i]
@@ -210,11 +210,11 @@ func imgLinkRenderHook(w io.Writer, node ast.Node, entering bool) (ast.WalkStatu
 				if link[len(link)-3:] == ".md" {
 					link = link[:len(link)-3] + ".html"
 				}
-				var fullString string = "<li><a href=\"" + link + "\"> <img src=\"" + img + "\"> <span class=\"title\">" + titleText + "</span><span class=\"desc\">" + hoverText + "</span></a></li>\n"
+				var fullString string = "    <li>\n        <a href=\"" + link + "\"> <img src=\"" + img + "\"> <span class=\"title\">" + titleText + "</span><span class=\"desc\">" + hoverText + "</span></a>\n    </li>\n"
 				io.WriteString(w, fullString)
 			}
 			
-			io.WriteString(w, "</ul>")
+			io.WriteString(w, "</ul>\n")
 		}
 		return ast.GoToNext, true
 	}

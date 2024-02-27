@@ -75,10 +75,14 @@ func renderFile(inputFile string, outputFile string, level int) {
 	finalHTML.WriteString(TITLE_MIDDLE)
 	finalHTML.WriteString(headings[0].Title)
 	finalHTML.WriteString(TITLE_END)
+	finalHTML.WriteString("\n")
 	finalHTML.WriteString(NAV_BAR)
+	finalHTML.WriteString("\n")
 	finalHTML.WriteString(CONTENT_START)
+	finalHTML.WriteString("\n")
 	finalHTML.WriteString(string(html))
 	finalHTML.WriteString(CONTENT_END)
+	finalHTML.WriteString("\n")
 	
 	err := os.WriteFile(outputFile, []byte(finalHTML.String()), 0666)
 	if err != nil {

@@ -79,6 +79,9 @@ func getLatest() {
 		lines := strings.Split(dateRange, "\n")
 
 		for _, line := range lines {
+			if line == "README.md" {
+				continue
+			}
 			if len(line) < 4 {
 				continue
 			}

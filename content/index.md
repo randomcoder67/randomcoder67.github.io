@@ -16,7 +16,7 @@
 
 ## Recent Posts
 
-* Mon 26 Feb 2024 - [Riding All Buses - Dundee](buses/busesDundee.md)
-* Mon 26 Feb 2024 - [Riding All Buses](buses/busesAllRoutes.md)
+* Mon 26 Feb 2024 - [Riding All Buses - Dundee](blog/travel/busesDundee.md)
+* Mon 26 Feb 2024 - [Riding All Buses](blog/travel/busesAllRoutes.md)
 * Fri 23 Feb 2024 - [About](about.md)
 * Fri 23 Feb 2024 - [randomcoder67 Website - Wiki](index.md)

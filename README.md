@@ -17,7 +17,6 @@ There are also various helper functions which help in managing the content, for 
 ## Credit
 
 * The aforementioned [gomarkdown](https://pkg.go.dev/github.com/gomarkdown/markdown) is used to render the markdown to HTML
-* HTML converted from Markdown with: [gomarkdown](https://pkg.go.dev/github.com/gomarkdown/markdown)  
 * Website inspired and CSS based off of [Luke Smith's Website](https://lukesmith.xyz)  
 * Further inspiration for website and wiki part from [LinuxReviews](https://linuxreviews.org/LinuxReviews)  
 * Website hosted with [GitHub Pages](https://pages.github.com/)  
