@@ -16,6 +16,8 @@
 
 ## Recent Posts
 
+* Tue 27 Feb 2024 - [Riding All Buses - Edinburgh](blog/travel/busesEdinburgh.md)
+* Tue 27 Feb 2024 - [Riding All Buses - Glasgow](blog/travel/busesGlasgow.md)
 * Tue 27 Feb 2024 - [randomcoder67 Wiki](wiki/index.md)
 * Tue 27 Feb 2024 - [Linux Distributions](wiki/linux/distros.md)
 * Tue 27 Feb 2024 - [File Access](wiki/linux/fileAccess.md)
@@ -24,5 +26,3 @@
 * Tue 27 Feb 2024 - [Text Editors](wiki/linux/textEditors.md)
 * Tue 27 Feb 2024 - [GoTube Terminal YouTube Client](wiki/myprograms/gotube.md)
 * Tue 27 Feb 2024 - [Useful Websites](wiki/other/usefulWebsites.md)
-* Mon 26 Feb 2024 - [Riding All Buses - Dundee](blog/travel/busesDundee.md)
-* Mon 26 Feb 2024 - [Riding All Buses](blog/travel/busesAllRoutes.md)
