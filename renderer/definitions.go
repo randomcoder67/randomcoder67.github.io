@@ -1,5 +1,6 @@
 package main
 
+/*
 const TOC_START string = `<div id="toc" class="toc">
 	<div id="toctitle" class="toctitle">
 		<h2>Contents</h2>
@@ -8,6 +9,12 @@ const TOC_START string = `<div id="toc" class="toc">
 			<a class="togglelink" role="button" tabindex="0">hide</a>
 			]
 		</span>
+	</div>`
+*/
+
+const TOC_START string = `<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
 	</div>`
 
 const TOC_END string = "</div>"

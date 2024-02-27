@@ -83,8 +83,15 @@ func renderFile(inputFile string, outputFile string, level int) {
 	finalHTML.WriteString(string(html))
 	finalHTML.WriteString(CONTENT_END)
 	finalHTML.WriteString("\n")
+
+	var htmlString string = finalHTML.String()
+	if strings.Contains(outputFile, "/wiki/") {
+		var contents string = renderContents()
+		oldString := htmlString
+		htmlString = strings.Replace(htmlString, "<h2", contents + "\n<h2", 1)
+	}
 	
-	err := os.WriteFile(outputFile, []byte(finalHTML.String()), 0666)
+	err := os.WriteFile(outputFile, []byte(htmlString), 0666)
 	if err != nil {
 		panic(err)
 	}

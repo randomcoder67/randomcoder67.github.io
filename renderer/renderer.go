@@ -32,7 +32,9 @@ func renderContentsRecursive(curHeadings []Heading) {
 	contents += "\n\t<ul>"
 	for _, heading := range curHeadings {
 		contents += "\n\t\t<li>"
-		contents += "\n\t\t\t<a>"
+		var link string = strings.ToLower(heading.Title)
+		link = strings.ReplaceAll(link, " ", "-")
+		contents += "\n\t\t\t<a href=\"#" + link + "\">"
 		
 		var levelString string = ""
 		//fmt.Println("Headings:", curHeadings)
@@ -40,12 +42,13 @@ func renderContentsRecursive(curHeadings []Heading) {
 		for i:=0; i<heading.Level; i++ {
 			levelString = levelString + strconv.Itoa(currentHeading[i]) + "."
 		}
+		levelString = levelString[:len(levelString)-1]
 		for i:=heading.Level; i<6; i++ {
 			currentHeading[i] = 0
 		}
 		
-		contents += "\n\t\t\t\t<span>" + levelString + "</span>"
-		contents += "\n\t\t\t\t<span>" + heading.Title + "</span>"
+		contents += "\n\t\t\t\t<span class=\"tocnumber\">" + levelString + "</span>"
+		contents += "\n\t\t\t\t<span class=\"toctext\">" + heading.Title + "</span>"
 		contents += "\n\t\t\t</a>"
 		renderContentsRecursive(heading.Subheadings)
 		contents += "\n\t\t</li>"
@@ -60,7 +63,7 @@ func renderContents() string {
 	
 	renderContentsRecursive(headings)
 	
-	_ = contents
+	contents = contents + TOC_END
 	return contents
 }
 
@@ -135,6 +138,8 @@ func renderLinkHTMLExtension(w io.Writer, p *ast.Link, entering bool) {
 		var link string = string(p.Destination)
 		if len(link) > 0 && link[len(link)-3:] == ".md" {
 			link = link[:len(link)-3] + ".html"
+		} else if strings.Contains(link, ".md#") {
+			link = strings.ReplaceAll(link, ".md#", ".html#")
 		}
 		io.WriteString(w, "<a href=\"" + link + "\" target=\"_self\">")
 	} else {
