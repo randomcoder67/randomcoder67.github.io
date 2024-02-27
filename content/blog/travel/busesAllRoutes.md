@@ -16,7 +16,22 @@ Inspired by [Geoff Marshall's Excellent Recent Video](https://www.youtube.com/wa
 	* For example in Edinburgh, coaches that go to Glasgow, Dundee, Glenrothes etc. 
 	* I will however include airport-shuttle services, such as Edinburgh Airlink
 * Trams are not included
-* I'm not making this a strict rule, but a bonus challenge could be to ride a portion of every bus route, that is **unique** to that route. I will mark which buses I achieved this for, in case I want to come back to the challenge later  
+* I'm not making this a strict rule, but a bonus challenge could be to ride a portion of every bus route, that is **unique** to that route. I will mark which buses I achieved this for, in case I want to come back to the challenge later 
+
+## Which Routes to Include
+
+### Area
+
+I have divided the challenge into Scotland's cities, so I'm going to define the boundaries of each city, highly scientifically, as the area highlighted by Google Maps for each city.  
+So for Edinburgh, this is basically everything inside the ring road for example. 
+
+### Routes
+
+* What counts as a route inside this area?
+
+I have established that "long range coaches" are not included, however what exactly defines a "long range coach"?  
+To some extent this will come down to individual judgement, but one **big** indicator a service is a LRC would be if most of it's stops are clustered outside of the city.  
+For example there are a lot of Glasgow buses which stop a couple of times in the city center, and then don't stop again until they are well outside of the city boundary. These would count as LRCs, and thus not be included in the challenge.
 
 ## Cities
 
