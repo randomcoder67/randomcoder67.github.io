@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../style.css">
+<title>Text Editors</title>
+</head>
+<div class="topnav">
+    <a href="/index.html" class="title">randomcoder67</a>
+    <a href="https://youtube.com" class="youtubeLogo"><img src="/logos/youtubeFullColour.png" alt="YouTube Logo" width="40" height="auto" class="youtubeLogo"></a>
+    <a href="https://github.com/randomcoder67" class="githubLogo"><img src="/logos/github-mark-white.png" alt="GitHub Logo" width="32" height="auto" class="githubLogo"></a>
+    <a href="/about.html" class="text">About</a>
+    <a href="/wiki/index.html" class="text">Wiki</a>
+    <a href="#" class="text">Travel</a>
+    <a href="#" class="text">Cycling</a>
+    <a href="#" class="text">Guides</a>
+    <a href="myprograms/landing.html" class="text">Coding</a>   
+</div>
+<div class="content">
+<h1 id=text-editors>Text Editors</h1>
+<p>A text editor is a program used to edit text files (as opposed to binary files, such as images or compiled executables). Text editors come in two main forms, terminal text editors and GUI text editors. Which you prefer is largely down to personal preference, however terminal text editors can be very useful, for example when remotely connecting to a system using SSH.</p>
+
+<p>This article will go over some examples of terminal and GUI text editors however it is not comprehensive, there are many other options avalible, these are just the editors I have experience with. Notable exclusions are <a href="https://www.vim.org/" target="_self">Vim</a>
+, <a href="https://www.gnu.org/software/emacs/" target="_self">Emacs</a>
+, <a href="https://www.sublimetext.com/" target="_self">Sublime Text</a>
+, <a href="https://kate-editor.org/en-gb/" target="_self">Kate</a>
+ and <a href="https://github.com/atom/atom" target="_self">Atom</a>
+.</p>
+
+<p>A term you may see come up often is "IDE", which stands for Integrated Development Environment. An IDE will often include a text editor, as well as features to help with software development, such as an integrated terminal, integrated debugging support and <a href="git.html" target="_self">git version control</a>
+ support. As I only have experience with one IDE (VSCode), I have decided to just include IDEs in this article.</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#text-editors">
+				<span class="tocnumber">1</span>
+				<span class="toctext">Text Editors</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#terminal-text-editors">
+				<span class="tocnumber">1.1</span>
+				<span class="toctext">Terminal Text Editors</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#nano">
+				<span class="tocnumber">1.1.1</span>
+				<span class="toctext">Nano</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#micro">
+				<span class="tocnumber">1.1.2</span>
+				<span class="toctext">Micro</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#configuration">
+				<span class="tocnumber">1.1.2.1</span>
+				<span class="toctext">Configuration</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#editing-highlight-colours">
+				<span class="tocnumber">1.1.2.2</span>
+				<span class="toctext">Editing Highlight Colours</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#editing-syntax-highlighting">
+				<span class="tocnumber">1.1.2.3</span>
+				<span class="toctext">Editing Syntax Highlighting</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#gui-text-editors">
+				<span class="tocnumber">1.2</span>
+				<span class="toctext">GUI Text Editors</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#vscode">
+				<span class="tocnumber">1.2.1</span>
+				<span class="toctext">VSCode</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#useful-keyboard-shortcuts">
+				<span class="tocnumber">1.2.1.1</span>
+				<span class="toctext">Useful Keyboard Shortcuts</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#mousepad">
+				<span class="tocnumber">1.2.2</span>
+				<span class="toctext">Mousepad</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#changing-keyboard-shortcuts">
+				<span class="tocnumber">1.2.2.1</span>
+				<span class="toctext">Changing Keyboard Shortcuts</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#spell-checking">
+				<span class="tocnumber">1.2.2.2</span>
+				<span class="toctext">Spell Checking</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#editing-colour-scheme">
+				<span class="tocnumber">1.2.2.3</span>
+				<span class="toctext">Editing Colour Scheme</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#editing-syntax-highlighting">
+				<span class="tocnumber">1.2.2.4</span>
+				<span class="toctext">Editing Syntax Highlighting</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#leafpad">
+				<span class="tocnumber">1.2.3</span>
+				<span class="toctext">Leafpad</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#lite-xl">
+				<span class="tocnumber">1.2.4</span>
+				<span class="toctext">Lite XL</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#gedit">
+				<span class="tocnumber">1.2.5</span>
+				<span class="toctext">Gedit</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#geany">
+				<span class="tocnumber">1.2.6</span>
+				<span class="toctext">Geany</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=terminal-text-editors>Terminal Text Editors</h2>
+<h3 id=nano>Nano</h3>
+
+<p>GNU Nano is a very old text editor. First released in 1999, it is included by default on almost all Linux distrobutions, and is avalible for Windows and macOS as well. Nano comes with basic syntax highlighting and basic keyboard shortcuts, and it very easy to use for making small edits to files when a GUI text editor is not avalible.</p>
+<h3 id=micro>Micro</h3>
+
+<p>Micro is a modern terminal editor writter in <a href="golang.html" target="_self">Golang</a>
+. Designed to be easy to use, it does not use vim bindings, but rather a modifier based system, similar to the programs you are likely used to. It comes with syntax highlighting built in, and support for extensions and theming.</p>
+<h4 id=configuration>Configuration</h4>
+
+<p>Micro's config file is located at <code>~/.config/micro/settings.json</code>, and keybindings are located at <code>~/.config/micro/bindings.json</code>. A few notable settings are listed below.</p>
+
+<p>Due to the way terminals work in capturing key input, it is difficult for some keyboard shortcut to be parsed. <code>Ctrl-I</code> for example, often used for "Indent Line", cannot be bound within micro. I bind <code>Ctrl-O</code> to this instead.</p>
+
+<p>In order to bind "Ctrl-Backspace" to the standard Ctrl-Backspace behaviour (deleting whole words at once), the following can be used:</p>
+
+<pre><code class="language-json">&quot;OldBackspace&quot;: &quot;DeleteWordLeft&quot;
+</code></pre>
+
+<p>The following bindings will bind <code>Ctrl-W</code> to close the current tab, or quit if only one tab open, and <code>Ctrl-Q</code> to quit all tabs, prompting if unsaved work will be lost.</p>
+
+<pre><code class="language-json">&quot;Ctrl-W&quot;: &quot;Quit&quot;,
+&quot;Ctrl-Q&quot;: &quot;QuitAll&quot;
+</code></pre>
+<h4 id=editing-highlight-colours>Editing Highlight Colours</h4>
+
+<p>The syntax highlighting colours can be edited by making a colourscheme file such as <code>~/.config/micro/colorschemes/draculacustom.micro</code>. <a href="https://github.com/randomcoder67/XFCE-Laptop-Config/blob/main/configure/home/.config/micro/colorschemes/draculacustom.micro" target="_self">An example of some of the avalible mappings can be found in my personal dotfiles</a>
+.</p>
+
+<p>The mapping work as follows:</p>
+
+<pre><code class="language-yaml">- constant.bool: &quot;\\b(true|false)\\b&quot;
+</code></pre>
+
+<p>In the above snippet, "true" or "false" are matched. The colour they appear as will depends on the theme file, mentioned earlier. The key name above is <code>constant.bool</code>. If no colour for <code>constant.bool</code> is found, the colour for <code>constant</code> will be used instead, so:</p>
+
+<pre><code class="language-micro">color-link constant &quot;#ff0000&quot;
+</code></pre>
+
+<p>Would set the colour of "true" or "false" to <code>#ff0000</code>, whereas:</p>
+
+<pre><code class="language-micro">color-link constant &quot;#ff0000&quot;
+color-link constant.bool &quot;#00ffff&quot;
+</code></pre>
+
+<p>Would set the colour to <code>#00ffff</code>, as the <code>constant.bool</code> colour is the better match for the <code>constant.bool</code> key.</p>
+<h4 id=editing-syntax-highlighting>Editing Syntax Highlighting</h4>
+
+<p>The above of course only changes the colours of the existing syntax highlighting. If you wish to change what is/isn't highlighted, custom syntax files can be places in <code>~/.config/micro/syntax/</code> in files such as <code>go.yaml</code>. The default files can be found <a href="https://github.com/zyedidia/micro/tree/master/runtime/syntax" target="_self">in the Micro GitHub repo</a>
+. These files use regular expressions to match the text to highlight. The files is read top to bottom, with lower rules overwriting higher ones. This snippet for example:</p>
+
+<pre><code class="language-yaml">- function: &quot;[a-zA-Z0-9_]*[ ]?\\(&quot;
+- default: &quot;\\(&quot;
+</code></pre>
+
+<p>Will highlight the name of a function. The first line selects the function name and also the open bracket. The second line is then used to "undo" the selected of the bracket, by setting all "(" characters to the default colour.</p>
+<h2 id=gui-text-editors>GUI Text Editors</h2>
+<h3 id=vscode>VSCode</h3>
+
+<p>VSCode is an open source code editor/IDE designed by Microsoft (although is is avalible stripped of all Microsoft branding and features as <a href="https://vscodium.com/" target="_self">VSCodium</a>
+). VSCode comes with a number of useful IDE features, such as an inbuilt terminal, error highlighting, inbuilt git support and the ability to edit documents over SSH. It is however not very lightweight, being programmed in Electron. This does make it very extensible however.</p>
+<h4 id=useful-keyboard-shortcuts>Useful Keyboard Shortcuts</h4>
+
+<p><code>Ctrl+Shift+V</code> when editing a markdown file will open a new tab showing a preview of how the markdown looks when rendered.</p>
+<h3 id=mousepad>Mousepad</h3>
+
+<p>Mousepad is the default text editor included in the <a href="xfce.html" target="_self">Xfce Desktop Environment</a>
+. It is lightweight and doesn't have any IDE features, but it does come with syntax highlighting and a variety of useful keyboard shortcuts, which can be changed.</p>
+<h4 id=changing-keyboard-shortcuts>Changing Keyboard Shortcuts</h4>
+
+<p>Mousepad comes with an inbuilt extension to view and edit keyboard shortcuts. It can be accessed through <code>Edit -&gt; Preferences -&gt; Plugins -&gt; Shortcuts Editor</code>. If you wish to automatically load keyboard shortcuts, the file <code>~/.config/Mousepad/accels.scm</code> can be used. Note this file is saved upon closing Mousepad, so Mousepad must be closed when editing it, otherwise it will be overwritten with the old file upon closing Mousepad</p>
+<h4 id=spell-checking>Spell Checking</h4>
+
+<p>In order to use spell checking, you need to install a compatible spell checking library. On Arch this can be done using <code>pacman -S gspell</code>. The spellchecking is often annoying when editing things that are not just "language text", for example code. A keyboard shortcut can be set to toggle spell checking on and off. I use <code>Ctrl+Shift+K</code> for this. This can be set in the aforemention shortcuts editor, or in <code>accels.scm</code> as:</p>
+
+<pre><code>(gtk_accel_path &quot;&lt;Actions&gt;/app.mousepad-plugin-gspell&quot; &quot;&lt;Primary&gt;&lt;Shift&gt;k&quot;)
+</code></pre>
+<h4 id=editing-colour-scheme>Editing Colour Scheme</h4>
+
+<p>Mousepad uses GTKSourceView for syntax highlighting, so the themes files are located at <code>/usr/share/gtksourceview-4/styles/</code>. User created theme files can be put in <code>~/.local/share/gtksourceview-4/styles/</code>.</p>
+
+<p>The theme files are in XML format, each mapping is in a <code>&lt;style&gt;</code> tag. The names are all similar to <code>def:heading</code>. The <code>def</code> part refers to the syntax file where the syntax is defined. So if there is syntax pattern in the <code>c.lang</code> file with the style id <code>function</code>, you would refer to it as <code>c:function</code>. This is covered more below in the Editing Syntax Highlighting section.</p>
+<h4 id=editing-syntax-highlighting-1>Editing Syntax Highlighting</h4>
+
+<p>The default syntax highlighting files are located at <code>/usr/share/gtksourceview-4/language-specs/</code>. User created files can be put in <code>~/.local/share/gtksourceview-4/language-specs/</code>. Files in the user directory will always be prioritised over the defaults.</p>
+
+<p>The syntax highlighting is in the form of "contexts", using regular expressions to select which areas to highlight. This is an example from my custom <code>markdown.lang</code> file.</p>
+
+<pre><code class="language-xml">&lt;context id=&quot;3-backticks-code-span-xml&quot; class=&quot;no-spell-check&quot;&gt;
+    &lt;start&gt;^```[ ]?(xml)[ ]?$&lt;/start&gt;
+    &lt;end&gt;^```$&lt;/end&gt;
+    &lt;include&gt;
+        &lt;context sub-pattern=&quot;0&quot; where=&quot;start&quot; style-ref=&quot;code-block&quot;/&gt;
+        &lt;context sub-pattern=&quot;0&quot; where=&quot;end&quot; style-ref=&quot;code-block&quot;/&gt;
+        &lt;context ref=&quot;xml:xml&quot;/&gt;
+    &lt;/include&gt;
+&lt;/context&gt;
+</code></pre>
+
+<p>The above snippet is used to highlight markdown xml code blocks, giving the code inside the syntax highlighting of the xml language. The text matched by the above snippet would be something like (ignore backslash):</p>
+
+<pre><code class="language-markdown">``` xml
+&lt;text&gt;This is some text&lt;/text&gt;
+&lt;image src=icon.png alt=&quot;This is an image&quot;&gt;
+\``` 
+</code></pre>
+
+<p>The <code>&lt;include&gt;</code> statement means that the contained rules will only be applied to text that is within the <code>&lt;start&gt;</code> and <code>&lt;end&gt;</code> regex.</p>
+
+<p>This line: <code>&lt;context sub-pattern=&quot;0&quot; where=&quot;start&quot; style-ref=&quot;code-block&quot;/&gt;</code> means the first line "``` xml" will be highlighted in the "code-block" style.</p>
+
+<p>This line: <code>&lt;context sub-pattern=&quot;0&quot; where=&quot;end&quot; style-ref=&quot;code-block&quot;/&gt;</code> means the last line "```" will be highlighted in the "code-block" style.</p>
+
+<p>This line: <code>&lt;context ref=&quot;xml:xml&quot;/&gt;</code> means that everything inbetween the <code>&lt;start&gt;</code> and <code>&lt;end&gt;</code> regex will be highlighted in the "xml:xml" style. "xml:xml" means "use every rule in the <code>xml.lang</code> file"</p>
+
+<p>Generally, "sub-pattern=0" refers to the whole regex string, with "sub-pattern=1" for example referring to the first regex capture group in the regex string etc.</p>
+<h3 id=leafpad>Leafpad</h3>
+
+<p>Leafpad is a very basic text editor, not including syntax highlighting or complex keyboard shortcuts. Not recommended for code editing, however it can be useful for focused writing, if all you need is a blank document and the ability to input text.</p>
+<h3 id=lite-xl>Lite XL</h3>
+<h3 id=gedit>Gedit</h3>
+<h3 id=geany>Geany</h3>
+</div>
