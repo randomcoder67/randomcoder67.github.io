@@ -1,4 +1,4 @@
-# Linux Distributions
+# Guide to Picking a Linux Distribution
 
 A Linux distribution (distro) is an OS made from the Linux kernel, with a package manager, and often a desktop environment included. 
 
@@ -30,7 +30,7 @@ Debian uses [apt](https://en.wikipedia.org/wiki/APT_(software)) as a package man
 
 ### Ubuntu
 
-Standard [Ubuntu](https://ubuntu.com/) comes with the [GNOME](https://www.gnome.org/) desktop environment. This environment is the most similar environment to macOS. GNOME is designed to be very user friendly, and is one of the most common desktop environments to find in corporate or educational settings where Linux is in use (although not necessarily running atop Ubuntu).
+Standard [Ubuntu](https://ubuntu.com/desktop) comes with the [GNOME](https://www.gnome.org/) desktop environment. This environment is the most similar environment to macOS. GNOME is designed to be very user friendly, and is one of the most common desktop environments to find in corporate or educational settings where Linux is in use (although not necessarily running atop Ubuntu).
 
 ### Kubuntu
 
@@ -50,7 +50,7 @@ Standard [Ubuntu](https://ubuntu.com/) comes with the [GNOME](https://www.gnome.
 
 ### Linux Mint - Debian
 
-Linux Mint also has a [Debian version](https://www.linuxmint.com/edition.php?id=308), which is based off of pure Debian instead of Ubuntu. 
+Linux Mint also has a [Debian version](https://www.linuxmint.com/download_lmde.php), which is based off of pure Debian instead of Ubuntu.
 
 ### Debian
 
@@ -77,7 +77,7 @@ If you are coming from macOS, I would recommend Ubuntu or Pop!_OS for a GNOME de
 
 If you are coming from Windows 8+, I would recommend Kubuntu for the KDE desktop environment, as the applications menu is very reminiscent of the Windows start menu, and the whole OS has a "Windows" feel to it IMO
   
-If you are coming from an older version of Windows, or you are on a low powered PC, Xubuntu or Lubuntu are good options to try out, as the Xfce and LXQt desktop environments are very lightweight, and both reminiscent of older Windows versions (XP-7) in my opinion. 
+If you are coming from an older version of Windows, or you are on a low powered PC, Xubuntu or Lubuntu are good options to try out, as the Xfce and LXQt desktop environments are very lightweight, and both reminiscent of older Windows versions (XP-7) in my opinion.
 
 ### Gamers
 

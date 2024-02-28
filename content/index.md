@@ -11,11 +11,12 @@
 /images/emojis/openBookNoto.svg|Wiki|Wiki of Random Stuff|wiki/index.md
 /images/emojis/laptopNoto.svg|My Programs|Programs I Have Developed|test2.md
 /images/emojis/terminalGuyNoto.svg|Linux|Linux|linux.md
-/images/emojis/trainStationNoto.svg|Travel|Travel/Transport|test3.md
+/images/emojis/trainStationNoto.svg|Travel|Travel/Transport|blog/travel/index.md
 /images/emojis/bikeNoto.svg|Cycling|Cycling Adventures|test3.md
 
 ## Recent Posts
 
+* Tue 27 Feb 2024 - [My Transport Excursions](blog/travel/index.md)
 * Tue 27 Feb 2024 - [Riding All Buses - Edinburgh](blog/travel/busesEdinburgh.md)
 * Tue 27 Feb 2024 - [Riding All Buses - Glasgow](blog/travel/busesGlasgow.md)
 * Tue 27 Feb 2024 - [randomcoder67 Wiki](wiki/index.md)
@@ -25,4 +26,3 @@
 * Tue 27 Feb 2024 - [Terminal Emulators](wiki/linux/terminals.md)
 * Tue 27 Feb 2024 - [Text Editors](wiki/linux/textEditors.md)
 * Tue 27 Feb 2024 - [GoTube Terminal YouTube Client](wiki/myprograms/gotube.md)
-* Tue 27 Feb 2024 - [Useful Websites](wiki/other/usefulWebsites.md)

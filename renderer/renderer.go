@@ -34,6 +34,7 @@ func renderContentsRecursive(curHeadings []Heading) {
 		contents += "\n\t\t<li>"
 		var link string = strings.ToLower(heading.Title)
 		link = strings.ReplaceAll(link, " ", "-")
+		link = strings.ReplaceAll(link, "--", "")
 		contents += "\n\t\t\t<a href=\"#" + link + "\">"
 		
 		var levelString string = ""

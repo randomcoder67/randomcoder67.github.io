@@ -4,7 +4,7 @@ File access is one of the most important parts of using a computer. As one of th
 
 ## Graphical File Managers
 
-The most common way of managing files, GUI file managers come as standard on most OSes. Windows had Windows Explorer, macOS has Finder, GNOME has Nautilus, Xfce has Thunar etc. The advantage of a GUI file manager is the ability to use the mouse to click and drag files. 
+The most common way of managing files, GUI file managers come as standard on most OSes. Windows has Windows Explorer, macOS has Finder, GNOME has Nautilus, Xfce has Thunar etc. The advantage of a GUI file manager is the ability to use the mouse to click and drag files.
 
 ### Thunar
 

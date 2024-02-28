@@ -56,7 +56,6 @@ func resolveNewFilename(oldFilename string) string {
 }
 
 func getFileTitle(filename string) string {
-	filename = "../" + filename
 	dat, err := os.ReadFile(filename)
 	if err != nil {
 		panic(err)
@@ -67,6 +66,32 @@ func getFileTitle(filename string) string {
 }
 
 func getLatest() {
+	gitStatus := exec.Command("git", "status")
+	status, err := gitStatus.Output()
+	if err != nil {
+		panic(err)
+	}
+	
+	split := strings.Split(string(status), "\n")
+	
+	for _, line := range split {
+		if len(line) < 8 {
+			continue
+		}
+		if strings.Contains(line, "new file:") {
+			var filename string = strings.Fields(line)[2]
+			dateNow := time.Now()
+			newEntry := Entry {
+				Title: getFileTitle(filename),
+				Link: filename[11:],
+				Date: dateNow,
+			}
+			
+			mostRecent = append(mostRecent, newEntry)
+		}
+	}
+
+
 	cmd := exec.Command("git", "log", "--format=format:%ci", "--name-only", "--diff-filter=A")
 	output, err := cmd.Output()
 	if err != nil {
@@ -94,8 +119,8 @@ func getLatest() {
 					line = resolveNewFilename(line)
 				}
 				
-				newEntry := Entry{
-					Title: getFileTitle(line),
+				newEntry := Entry {
+					Title: getFileTitle("../" + line),
 					Link: line[8:],
 					Date: parsedDate,
 				}
