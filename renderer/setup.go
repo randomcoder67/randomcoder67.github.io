@@ -13,6 +13,7 @@ import (
 )
 
 var currentDir string
+var contentRootDir string
 var rootDir string
 
 const (
@@ -126,7 +127,7 @@ func renderFolder(dirName string, outputDir string) {
 	// Copy style.css there
 	homeDir, _ := os.UserHomeDir()
 	_ = homeDir
-	source, err := os.Open(homeDir + CSS_FILE_LOCATION)
+	source, err := os.Open(rootDir + "/" + CSS_FILE_LOCATION)
 	if err != nil {
 		panic(err)
 	}

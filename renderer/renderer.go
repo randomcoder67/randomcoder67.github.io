@@ -108,7 +108,7 @@ func getImageDimensions(link string) (int, int) {
 	var fullLink string
 
 	if link[0] == '/' {
-		fullLink = rootDir + "/" + link
+		fullLink = contentRootDir + "/" + link
 	} else {
 		fullLink = currentDir + "/" + link
 	}

@@ -3,10 +3,11 @@ package main
 import (
 	"os"
 	"fmt"
+	"strings"
 	"encoding/json"
 )
 
-const CSS_FILE_LOCATION = "/Programs/website/GitHubWebsite/renderer/style.css"
+const CSS_FILE_LOCATION = "/renderer/style.css"
 
 type Options struct {
 	Folder     bool
@@ -95,7 +96,17 @@ func main() {
 	opt := parseArgs(os.Args[1:])
 	//fmt.Printf("%+v\n", opt)
 
-	rootDir = opt.InputName
+	contentRootDir = opt.InputName
+	lastSlash := strings.LastIndex(opt.InputName, "/")
+	if lastSlash == len(opt.InputName) - 1 {
+		lastSlash = strings.LastIndex(opt.InputName[:len(opt.InputName)-1], "/")
+	}
+	if lastSlash == -1 {
+		rootDir = "."
+	} else {
+		rootDir = opt.InputName[:lastSlash]
+	}
+	fmt.Println(rootDir)
 	
 	if opt.Folder {
 		renderFolder(opt.InputName, opt.OutputName)
