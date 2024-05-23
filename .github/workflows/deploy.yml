@@ -1,0 +1,29 @@
+on:
+    push:
+        branches:
+            - main
+
+name: Render Website
+
+jobs:
+    checkout-and-deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@main
+              
+            - name: Render to markdown
+              run: |
+                mkdir -p rendered
+                cd renderer
+                make
+                ./gorender -f ../content ../output
+
+            - name: Commit and push cahnges
+              uses: Cecilapp/GitHub-Pages-deploy@v3
+              env:
+                GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              with:
+                email: ${{ secrets.EMAIL }}
+                build_dir: output/
+                branch: gh-pages
