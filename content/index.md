@@ -9,3 +9,9 @@
 /images/emojis/terminalGuyNoto.svg|Linux|Linux|linux.md
 
 ## Recent Posts
+
+* Thu 23 May 2024 - [About](about.md)
+* Thu 23 May 2024 - [randomcoder67 Website/Wiki](index.md)
+* Thu 23 May 2024 - [randomcoder67 Wiki](wiki/index.md)
+* Thu 23 May 2024 - [GoTube Terminal YouTube Client](wiki/myPrograms/gotube.md)
+* Thu 23 May 2024 - [Minecraft 1.20.1 Setup - Vanilla Plus](wiki/other/minecraftSetup.md)

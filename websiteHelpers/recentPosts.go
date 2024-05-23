@@ -60,7 +60,7 @@ func getFileTitle(filename string) string {
 	if err != nil {
 		panic(err)
 	}
-	
+
 	firstLine := strings.Split(string(dat), "\n")[0]
 	return firstLine[2:]
 }
@@ -71,9 +71,9 @@ func getLatest() {
 	if err != nil {
 		panic(err)
 	}
-	
+
 	split := strings.Split(string(status), "\n")
-	
+
 	for _, line := range split {
 		if len(line) < 8 {
 			continue
@@ -86,7 +86,7 @@ func getLatest() {
 				Link: filename[11:],
 				Date: dateNow,
 			}
-			
+
 			mostRecent = append(mostRecent, newEntry)
 		}
 	}
@@ -98,7 +98,6 @@ func getLatest() {
 		panic(err)
 	}
 	commits := strings.Split(string(output), "\n\n")
-	
 	for _, dateRange := range commits {
 		var curDate string = strings.Split(strings.Split(dateRange, "\n")[0], " ")[0]
 		lines := strings.Split(dateRange, "\n")
@@ -107,6 +106,7 @@ func getLatest() {
 			if line == "README.md" {
 				continue
 			}
+
 			if len(line) < 4 {
 				continue
 			}
@@ -118,7 +118,7 @@ func getLatest() {
 				if !fileExists(line) {
 					line = resolveNewFilename(line)
 				}
-				
+
 				newEntry := Entry {
 					Title: getFileTitle("../" + line),
 					Link: line[8:],
