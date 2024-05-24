@@ -35,7 +35,7 @@ Download linked resource packs and place them in `~/.minecraft/resourcepacks`, t
 
 The default Minecraft launcher is not great, it's very slow and it's difficult to use modern and old version at the same time.  
 [MultiMC](https://multimc.org/) is a good alternative launcher. It is avalible for Linux ([Arch PKGBUILD](https://github.com/MultiMC/multimc-pkgbuild)), and has been around for eons.  
-There is also [PolyMC](https://polymc.org/) and [Prism Launcher](https://prismlauncher.org/), which seem to be basically identical but apparently PolyMC isn't maintained anymore. There is a bunch of boring political drama around the two, and MultiMC seems to do everything you would need, so just stick to that imo.
+There is also [PolyMC](https://polymc.org/) and [Prism Launcher](https://prismlauncher.org/), which seem to be basically identical but apparently PrismMC was forked from PolyMC because of some drama. There is a bunch of boring political drama around the two, and MultiMC seems to do everything you would need, so just stick to that.
 
 ## Mods
 

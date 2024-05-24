@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"strings"
+	"bufio"
 )
 
 var currentDir string
@@ -103,7 +104,7 @@ func renderFile(inputFile string, outputFile string, level int) {
 	}
 }
 
-func renderFolder(dirName string, outputDir string) {
+func renderFolder(dirName string, outputDir string, forceOverwrite bool) {
 	// Check dirName is a directory
 	if isFileOrDir(dirName) != TYPE_DIR {
 		fmt.Println("Error, not a directory")
@@ -121,8 +122,33 @@ func renderFolder(dirName string, outputDir string) {
 		dirName = dirName + "/"
 	}
 	// Make the "new root" directory
-	if isFileOrDir(outputDir) != TYPE_DIR {
+	outputDirType := isFileOrDir(outputDir)
+	if outputDirType == TYPE_NOTHING {
 		os.Mkdir(outputDir, os.ModePerm)
+	} else if outputDirType == TYPE_DIR {
+		if forceOverwrite {
+			os.RemoveAll(outputDir)
+			os.Mkdir(outputDir, os.ModePerm)
+		} else {
+			fmt.Printf("Overwrite existing dir? (y/N): ")
+			in := bufio.NewReader(os.Stdin)
+			stuff, err := in.ReadString('\n')
+			if err != nil {
+				panic(err)
+			}
+			
+			stuff = strings.ReplaceAll(stuff, "\n", "")
+			if stuff == "y" || stuff == "Y" {
+				os.RemoveAll(outputDir)
+				os.Mkdir(outputDir, os.ModePerm)
+			} else {
+				fmt.Println("outputDir already exists, not overwriting")
+				os.Exit(0)
+			}
+		}
+	} else {
+		fmt.Println("Error, outputDir is a file")
+		errorOut()
 	}
 	// Copy style.css there
 	homeDir, _ := os.UserHomeDir()

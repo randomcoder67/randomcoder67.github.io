@@ -10,9 +10,10 @@ import (
 const CSS_FILE_LOCATION = "/renderer/style.css"
 
 type Options struct {
-	Folder     bool
-	InputName  string
-	OutputName string
+	Folder        bool
+	InputName     string
+	OutputName    string
+	ForceOverwrite bool
 }
 
 /*
@@ -68,7 +69,12 @@ func parseArgs(args []string) Options {
 		opt.InputName = args[0]
 		opt.OutputName = args[1]
 	} else if len(args) == 3 {
-		if args[0] == "-f" {
+		if args[0][0:2] == "-f" {
+			if args[0] == "-ff" {
+				opt.ForceOverwrite = true
+			} else {
+				opt.ForceOverwrite = false
+			}
 			opt.Folder = true
 			opt.InputName = args[1]
 			opt.OutputName = args[2]
@@ -106,10 +112,9 @@ func main() {
 	} else {
 		rootDir = opt.InputName[:lastSlash]
 	}
-	fmt.Println(rootDir)
 	
 	if opt.Folder {
-		renderFolder(opt.InputName, opt.OutputName)
+		renderFolder(opt.InputName, opt.OutputName, opt.ForceOverwrite)
 	} else {
 		renderFile(opt.InputName, opt.OutputName, 0)
 	}
