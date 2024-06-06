@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../style.css">
+<title>Old Inventorio Changes</title>
+</head>
+<div class="topnav">
+    <a href="/index.html" class="title">randomcoder67</a>
+    <a href="https://github.com/randomcoder67" class="githubLogo"><img src="/logos/github-mark-white.png" alt="GitHub Logo" width="32" height="auto" class="githubLogo"></a>
+    <a href="/about.html" class="text">About</a>
+    <a href="/wiki/index.html" class="text">Wiki</a>
+    <a href="/wiki/myprograms/index.html" class="text">Coding</a>   
+    <a href="/wiki/linux/index.html" class="text">Linux</a>
+</div>
+<div class="content">
+<h1 id=old-inventorio-changes>Old Inventorio Changes</h1>
+<p>As part of my Minecraft 1.20.1 setup, I originally had a slightly modified version of Inventorio. I had a GitHub fork but then deleted it once I decided to remove it from the setup.</p>
+
+<p>I will quickly list the changes I had made here for archival purposes.</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#code-changes">
+				<span class="tocnumber">1</span>
+				<span class="toctext">Code Changes</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#config">
+				<span class="tocnumber">2</span>
+				<span class="toctext">Config</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=code-changes>Code Changes</h2>
+
+<p>I sligtly modified it so that there are always 2 extra inventory slots (removing the requirement for Deep Pockets enchamtment)</p>
+
+<p>This was done by replacing all lines identical to this:</p>
+
+<pre><code class="language-kt">EnchantmentHelper.getEquipmentLevel(DeepPocketsEnchantment, player).coerceIn(0, 3)
+</code></pre>
+
+<p>With this:</p>
+
+<pre><code class="language-kt">EnchantmentHelper.getEquipmentLevel(DeepPocketsEnchantment, player).coerceIn(2, 2)
+</code></pre>
+
+<p>In the <code>PlayerInventoryExtension.kt</code> files. This file is present numerous times because of the multi-Minecraft-version structure of the mods code, so make sure to change it in every file.</p>
+
+<p>This change makes the mod think you always have Deep Pockets II, causing 2 extra inventory slots, and an extra row of offhand slots, to be present at all times. Of course if you wanted 1 or 3 extra inventory slots, you could use <code>coerceIn(1, 1)</code>, or <code>coerceIn(3, 3)</code> instead.</p>
+<h2 id=config>Config</h2>
+
+<p>I removed the auto-tool-switching feature in the config as I find it confusing, this can be done in game via a mod such as ModMenu</p>
+</div>
