@@ -10,6 +10,7 @@
 
 ## Recent Posts
 
+* Thu 06 Jun 2024 - [Old Inventorio Changes](wiki/other/inventorioFork.md)
 * Thu 23 May 2024 - [About](about.md)
 * Thu 23 May 2024 - [randomcoder67 Website/Wiki](index.md)
 * Thu 23 May 2024 - [randomcoder67 Wiki](wiki/index.md)

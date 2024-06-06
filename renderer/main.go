@@ -95,7 +95,7 @@ func errorOut() {
 }
 
 func printHelp() {
-	fmt.Printf("Usage:\n  render input.md [output.html] (defaults to input with .html extension)\n  render -f inputDir/ outputDir/\n")
+	fmt.Printf("Usage:\n  render input.md [output.html] (defaults to input with .html extension)\n  render -f[f] inputDir/ outputDir/ (second f to force existing folder overwrite)\n")
 }
 
 func main() {

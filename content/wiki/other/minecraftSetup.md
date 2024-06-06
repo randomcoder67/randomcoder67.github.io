@@ -54,7 +54,6 @@ There is also [PolyMC](https://polymc.org/) and [Prism Launcher](https://prismla
 
 ### Inventory
 
-* [Modified Inventorio](https://github.com/randomcoder67/Inventorio-rc67-Fork) - I wanted a toolbelt and an inventory expansion. Inventorio provides both of these. I sligtly modified it so that there are always 2 extra inventory slots (removing the requirement for Deep Pockets enchamtment), and removed the auto-tool-switching feature in the config as I find it confusing
 * [Clean Tooltips](https://modrinth.com/mod/clean-tooltips) - Easier to read item tooltips
 * [Detail Armor Bar](https://www.curseforge.com/minecraft/mc-mods/detail-armor-bar) - Colour of armour bar icons varies depending on the type of armour you are wearing
 * [GUI Clock](https://www.curseforge.com/minecraft/mc-mods/gui-clock) - Vanilla friendly way to get the accurate in game time - feels less cheaty than using a datapack to always display it
@@ -214,3 +213,7 @@ There is also [PolyMC](https://polymc.org/) and [Prism Launcher](https://prismla
 
 * `doInsomnia` gamerule is set to false, as Phantoms attacking the player when they don't sleep only *encourages* overuse of beds. Also Phantoms just aren't fun
 * `doFireTick` gamerule is set to false, as fire destroying your wood builds is just annoying
+
+## Notes
+
+Originally I had a modified version of the mod [Inventorio](https://modrinth.com/mod/inventorio) on this list, however I removed it. For more details see [Inventorio Fork](inventorioFork.md)
