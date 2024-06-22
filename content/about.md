@@ -1,10 +1,14 @@
 # About
 
-This website is designed as a wiki type resource for my own coding projects, as well as for topics I have learned. It's a completely static website with minimal JavaScript. I write the content for the website in Markdown files which are then converted to HTML using a Golang program whenever I push to the GitHub repository. 
+This website is designed as a wiki type resource for my own coding projects, as well as for topics I have learned. It's a completely static website with minimal JavaScript. I write the content for the website in Markdown files which are then converted to HTML using a Golang program whenever I push to the GitHub repository.
 
 ## Contributing
 
-If you spot a problem in the Wiki, or something can be improved/expanded upon, feel free to submit an issue or pull request on the [GitHub repository](https://github.com/randomcoder67/randomcoder67.github.io). 
+If you spot a problem in the Wiki, or something can be improved/expanded upon, feel free to submit an issue or pull request on the [GitHub repository](https://github.com/randomcoder67/randomcoder67.github.io).
+
+## CSS
+
+The current CSS can be found at [https://www.randomcoder67.github.io/style.css](/style.css). Changes to the CSS can be seen in the GitHub repository
 
 ## Contact
 

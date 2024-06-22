@@ -7,7 +7,7 @@ caption: GoTube Example Search
 Creater|randomcoder67
 GitHub Link|[GoTube Repo](https://github.com/randomcoder67/GoTube-YouTube-Client)
 Language|Golang
-Version|Beta 0.1.1
+Version|Beta 0.2.0
 Category|TUI Application
 
 GoTube is a terminal YouTube client, designed to emulate as much of the browser YouTube experience as possible, without the slow website, and without the ads. Similarly to [yt-dlp](https://github.com/yt-dlp/yt-dlp), GoTube makes use of the saved browser cookies to allow access to account features. This means that creating an API key and going through the OAuth process is not necessary, and also allows GoTube access to certain functions that the official API does not have, such as viewing and editing your Watch Later playing, and saving video watch times to your history.
