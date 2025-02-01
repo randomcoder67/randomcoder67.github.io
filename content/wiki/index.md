@@ -15,6 +15,7 @@ This section of my website is a wiki-style database of infomation about my own p
 
 | :-: | :-: | :-: |
 | [XFCE4-Laptop-Config](dotfiles/xfce4/xfceKeyboardShortcuts.md) | [Alacritty](dotfiles/alacritty.md) | [Other](dotfiles/other.md) |
+| [i3 Config](dotfiles/i3/i3.md) | [i3 Keyboard Shortcuts](dotfiles/i3/i3KeyboardShortcuts.md) | |
 
 ### Other Programs
 
