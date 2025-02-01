@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../style.css">
+<title>GNU Core Utils</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/outside/index.html">Outside</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="gnu core utils">GNU Core Utils</h1>
+</div>
+</div>
+<div class="actual-content">
+<p>The GNU Core Utilites (coreutils) are a set of command line tools included by default in any Linux distribution, designed to perform basic tasks within the terminal, such as moving, viewing or editing files.</p>
+
+<p>There are a number of other programs which fall into roughly the same category as the coreutils. For example diffutils, which includes <code>diff</code> and <code>cmp</code>, findutils which includes <code>find</code> and <code>xargs</code>, GNU grep, GNU tar, GNU less and util-linux. All of these programs will be covered here.</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#mv-coreutils">
+				<span class="tocnumber">1</span>
+				<span class="toctext">mv - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#cp-coreutils">
+				<span class="tocnumber">2</span>
+				<span class="toctext">cp - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#ls-coreutils">
+				<span class="tocnumber">3</span>
+				<span class="toctext">ls - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#cat-coreutils">
+				<span class="tocnumber">4</span>
+				<span class="toctext">cat - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#wc-coreutils">
+				<span class="tocnumber">5</span>
+				<span class="toctext">wc - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#ln-coreutils">
+				<span class="tocnumber">6</span>
+				<span class="toctext">ln - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#mkdir-coreutils">
+				<span class="tocnumber">7</span>
+				<span class="toctext">mkdir - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#rm-coreutils">
+				<span class="tocnumber">8</span>
+				<span class="toctext">rm - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#rmdir-coreutils">
+				<span class="tocnumber">9</span>
+				<span class="toctext">rmdir - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#chown-coreutils">
+				<span class="tocnumber">10</span>
+				<span class="toctext">chown - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#chmod-coreutils">
+				<span class="tocnumber">11</span>
+				<span class="toctext">chmod - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#dd-coreutils">
+				<span class="tocnumber">12</span>
+				<span class="toctext">dd - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#df-coreutils">
+				<span class="tocnumber">13</span>
+				<span class="toctext">df - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#du-coreutils">
+				<span class="tocnumber">14</span>
+				<span class="toctext">du - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#tee-coreutils">
+				<span class="tocnumber">15</span>
+				<span class="toctext">tee - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#cur-coreutils">
+				<span class="tocnumber">16</span>
+				<span class="toctext">cur - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#tr-coreutils">
+				<span class="tocnumber">17</span>
+				<span class="toctext">tr - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#sort-coreutils">
+				<span class="tocnumber">18</span>
+				<span class="toctext">sort - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#uniq-coreutils">
+				<span class="tocnumber">19</span>
+				<span class="toctext">uniq - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#head-coreutils">
+				<span class="tocnumber">20</span>
+				<span class="toctext">head - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#tail-coreutils">
+				<span class="tocnumber">21</span>
+				<span class="toctext">tail - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#sha1-244-256-384-512sum-md5sum-coreutils">
+				<span class="tocnumber">22</span>
+				<span class="toctext">sha1/244/256/384/512sum/md5sum - coreutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#diff-diffutils">
+				<span class="tocnumber">23</span>
+				<span class="toctext">diff - diffutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#cmp-diffutils">
+				<span class="tocnumber">24</span>
+				<span class="toctext">cmp - diffutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#find-findutils">
+				<span class="tocnumber">25</span>
+				<span class="toctext">find - findutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#xargs-findutils">
+				<span class="tocnumber">26</span>
+				<span class="toctext">xargs - findutils</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#grep-gnu-grep">
+				<span class="tocnumber">27</span>
+				<span class="toctext">grep - GNU grep</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#less-gnu-less">
+				<span class="tocnumber">28</span>
+				<span class="toctext">less - GNU less</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#tar-gnu-tar">
+				<span class="tocnumber">29</span>
+				<span class="toctext">tar - GNU tar</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#cal-util-linux">
+				<span class="tocnumber">30</span>
+				<span class="toctext">cal - util-linux</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#lsblk-util-linux">
+				<span class="tocnumber">31</span>
+				<span class="toctext">lsblk - util-linux</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#kill-util-linux">
+				<span class="tocnumber">32</span>
+				<span class="toctext">kill - util-linux</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#pkill-procps-ng">
+				<span class="tocnumber">33</span>
+				<span class="toctext">pkill - procps-ng</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=mv-coreutils>mv - coreutils</h2>
+
+<p>mv is used to move files/directories</p>
+
+<p><code>mv src dest</code> moves <code>src</code> to <code>dest</code><br>
+<code>mv -t dest src1 src2 src3 ... srcn</code> moves <code>src1</code>-<code>n</code> to directory <code>dest</code>. <code>-t</code> means "target directory"<br>
+<code>mv -i</code> tells mv to ask for confirmation before moving files/folders</p>
+<h2 id=cp-coreutils>cp - coreutils</h2>
+
+<p>cp is used to copy files/directories</p>
+
+<p><code>cp src dest</code> copies <code>src</code> to <code>dest</code><br>
+<code>cp -r src dest</code> copies <code>src</code> recursively to <code>dest</code>, meaning <code>src</code> will be copied along with it's contents/subdirectories<br>
+<code>cp -t dest src1 src2 src3 ... srcn</code> moves <code>src1</code>-<code>n</code> to directory <code>dest</code><br>
+<code>cp -i</code> tell cp to ask for confirmation</p>
+<h2 id=ls-coreutils>ls - coreutils</h2>
+
+<p>ls is used to list the files in the current directory, optinally including file attributes</p>
+
+<p><code>ls</code> - List files in current directory<br>
+<code>ls dir</code> - List files in directory "dir"<br>
+<code>ls -a</code> - List files including hidden files<br>
+<code>ls -A</code> - List files including hidden files (not including . and ..)<br>
+<code>ls -N</code> - Do not put quotes around files/directories with spaces in name<br>
+<code>ls --group-directories-first</code> - List directories first<br>
+<code>ls --file-type</code> - Add / to end of directory names<br>
+<code>ls --color=auto</code> - Display different colours for different types of file (one for directories, one for standard files, one for symbolic links, one for executable files etc)<br>
+<code>ls -l</code> - List files and display attributes<br>
+<code>ls -lh</code> - List files and display attributes (human readable formats, i.e. 1.0K instead of 1024)</p>
+<h2 id=cat-coreutils>cat - coreutils</h2>
+
+<p>cat is used to output the contents of a file to stdout. It stands for "concatenate`, as it's intended purpose is to combine files together.</p>
+
+<p><code>cat file</code> will output the contents of <code>file</code> to stdout (the terminal)<br>
+<code>cat file1 file2</code> will output the contents of <code>file1</code> followed by those of <code>file2</code> to stdout</p>
+<h2 id=wc-coreutils>wc - coreutils</h2>
+
+<p>wc is used to count the number of lines in a file/stdin</p>
+
+<p><code>wc -l file</code> - Show number of lines in file<br>
+<code>wc -l *</code> - Show number of lines in all files in directory<br>
+<code>cat file | wc -l</code> - Show number of lines in file (doesn't show filename)<br>
+<code>cat file1 file2 | wc -l</code> - Show number of lines in file1 and file2</p>
+<h2 id=ln-coreutils>ln - coreutils</h2>
+
+<p>ln is used to link files</p>
+<h2 id=mkdir-coreutils>mkdir - coreutils</h2>
+
+<p>mkdir is used to create directories</p>
+
+<p><code>mkdir dirname</code> - Create directory with name "dirname"<br>
+<code>mkdir -p dirname/subdir</code> - Create directory "dirname" and subdirectory "subdir"</p>
+<h2 id=rm-coreutils>rm - coreutils</h2>
+
+<p>rm is used to delete files/folders. <strong>By default there is no recycle bin when using rm, files are gone forever</strong></p>
+
+<p><code>rm file</code> will delete <code>file</code><br>
+<code>rm -t</code> tells rm to ask for confirmation<br>
+<code>rm -r folder</code> will delete <code>folder</code> recursively, meaning <code>folder</code> will be deleted along with all of it's contents<br>
+<code>rm -f file</code> will delete without asking for confirmation. This is the default behaviour, however <code>-f</code> can be specified to overwrite <code>-i</code> if for example <code>rm</code> was aliased to <code>rm -i</code></p>
+<h2 id=rmdir-coreutils>rmdir - coreutils</h2>
+
+<p>rmdir is used to remove empty directories. Useful if you don't want to accidentally remove a directory with contents.</p>
+
+<p><code>rmdir dir</code> will delete <code>dir</code></p>
+<h2 id=chown-coreutils>chown - coreutils</h2>
+<h2 id=chmod-coreutils>chmod - coreutils</h2>
+<h2 id=dd-coreutils>dd - coreutils</h2>
+
+<p>dd is used to copy data to a disk</p>
+
+<p><code>sudo dd input.iso /dev/sda</code> - Write input.iso to the drive /dev/sda <strong>will overwrite everything on /dev/sda</strong><br>
+<code>sudo dd input.iso /dev/sda --info=progress</code> - Show write progress, requires <code>progress</code> to be installed<br>
+<code>sudo dd input.iso bs=1M /dev/sda</code> - Set block size to 1M</p>
+<h2 id=df-coreutils>df - coreutils</h2>
+
+<p>df is used to view mounted filesystems and their total, used and avalible sizes, as well as mountpoints</p>
+<h2 id=du-coreutils>du - coreutils</h2>
+
+<p>du is used to list the sizes of files/directories. It defaults to displaying block sizes, and directories only</p>
+
+<p><code>du -b</code> - Display bytes instead of block sizes<br>
+<code>du -h</code> - Use human readable values (i.e. 1K) instead of block sizes<br>
+<code>du -a</code> - Display files and directories</p>
+<h2 id=tee-coreutils>tee - coreutils</h2>
+<h2 id=cur-coreutils>cur - coreutils</h2>
+<h2 id=tr-coreutils>tr - coreutils</h2>
+<h2 id=sort-coreutils>sort - coreutils</h2>
+<h2 id=uniq-coreutils>uniq - coreutils</h2>
+<h2 id=head-coreutils>head - coreutils</h2>
+
+<p>head is used to output the first n lines of a file</p>
+
+<p><code>head -n x file</code> - Display first x lines of file</p>
+<h2 id=tail-coreutils>tail - coreutils</h2>
+
+<p>tail is used to output the last n lines of a file, the opposite of head</p>
+
+<p><code>tail -n x file</code> - Display last x lines of file</p>
+<h2 id=sha1-244-256-384-512sum-md5sum-coreutils>sha1/244/256/384/512sum/md5sum - coreutils</h2>
+
+<p>The "sum" programs are used to get the hash of a file. <strong>SHA1 is not recommended as it is compromised</strong></p>
+
+<p><code>sha256sum file</code> - Get the SHA256 sum of a file<br>
+<code>md5sum file</code> - Get the MD5 sum of a file</p>
+<h2 id=diff-diffutils>diff - diffutils</h2>
+<h2 id=cmp-diffutils>cmp - diffutils</h2>
+<h2 id=find-findutils>find - findutils</h2>
+<h2 id=xargs-findutils>xargs - findutils</h2>
+<h2 id=grep-gnu-grep>grep - GNU grep</h2>
+<h2 id=less-gnu-less>less - GNU less</h2>
+
+<p>less is a terminal pager, designed to output a file starting at the top, scrolling on pressing <code>Return</code>, and scrolling a page on pressing <code>Space</code>.</p>
+
+<p><code>less file</code> - Run less on file</p>
+<h2 id=tar-gnu-tar>tar - GNU tar</h2>
+
+<p>tar is used to make and extract tar archives.</p>
+
+<p><code>tar -xf file.tar.gz</code> - Extract the files from "file.tar.gz"</p>
+<h2 id=cal-util-linux>cal - util-linux</h2>
+
+<p>cal is used to display a calendar in the terminal, including displaying the current date.</p>
+
+<p><code>cal</code> - Display the current month<br>
+<code>cal -y</code> - Display the current year<br>
+<code>cal -n 3</code> - Display the current month, and 2 months into the future<br>
+By default, cal can include blank lines if a month only has 5 weeks. To fix this, cal can be aliased to <code>unbuffer cal | sed '/^ *$/d'</code>. This will remove the extra line while keeping the highlighting of the current day thanks to unbuffer.</p>
+<h2 id=lsblk-util-linux>lsblk - util-linux</h2>
+
+<p>lsblk is used to list drivers and partitions.</p>
+
+<p><code>lsblk</code> - Show currently inserted drives, partitions and mountpoints<br>
+<code>lsblk -l</code> - Output as a list, with no branches<br>
+<code>lsblk -J</code> - Output as JSON</p>
+<h2 id=kill-util-linux>kill - util-linux</h2>
+<h2 id=pkill-procps-ng>pkill - procps-ng</h2>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>

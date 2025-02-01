@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../../style.css">
+<title>Terminal Emulators</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/outside/index.html">Outside</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="terminal emulators">Terminal Emulators</h1>
+</div>
+</div>
+<div class="actual-content">
+<p>A terminal emulator is a program used to interact directly with your OS via text input. Named as "emulators" because they are a software version of the old fashioned <a href="https://en.wikipedia.org/wiki/Computer_terminal" target="_self">hardware terminals</a>
+. Most OSes will come with a terminal emulator, Windows includes <a href="https://github.com/microsoft/terminal" target="_self">Windows Terminal</a>
+ and <a href="https://en.wikipedia.org/wiki/PowerShell" target="_self">Powershell</a>
+, macOS includes <a href="https://en.wikipedia.org/wiki/Terminal_(macOS)" target="_self">Terminal</a>
+. Linux desktop environments generally have their own terminal emulators, for example <a href="https://docs.xfce.org/apps/terminal/start" target="_self">Xfce Terminal</a>
+, <a href="https://en.wikipedia.org/wiki/GNOME_Terminal" target="_self">Gnome Terminal</a>
+ or <a href="https://en.wikipedia.org/wiki/Konsole" target="_self">Konsole</a>
+ (for KDE).</p>
+
+<p>This page mainly discusses Linux terminal emulators. Terminal emulators from one distro can be installed on another, and there are a variety of "third party" options to choose from as well.</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#alacritty">
+				<span class="tocnumber">1</span>
+				<span class="toctext">Alacritty</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#configuration">
+				<span class="tocnumber">1.1</span>
+				<span class="toctext">Configuration</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#useful-config-tips">
+				<span class="tocnumber">1.1.1</span>
+				<span class="toctext">Useful Config Tips</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#usage">
+				<span class="tocnumber">1.2</span>
+				<span class="toctext">Usage</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#troubleshooting">
+				<span class="tocnumber">1.3</span>
+				<span class="toctext">Troubleshooting</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#wayland-titlebar">
+				<span class="tocnumber">1.3.1</span>
+				<span class="toctext">Wayland Titlebar</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#ueberzug-issues">
+				<span class="tocnumber">1.3.2</span>
+				<span class="toctext">Ueberzug Issues</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#xfce-terminal">
+				<span class="tocnumber">2</span>
+				<span class="toctext">Xfce Terminal</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#cool-retro-term">
+				<span class="tocnumber">3</span>
+				<span class="toctext">Cool Retro Term</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=alacritty>Alacritty</h2>
+
+<p><a href="https://alacritty.org/" target="_self">Alacritty</a>
+ is a terminal emulator written in Rust, designed for speed and easy customisability.</p>
+<h3 id=configuration>Configuration</h3>
+
+<p>To change the default configuration, edit the config file (<code>~/.config/alacritty/alacritty.yml</code>). If this config file doesn't exist, the default one (normally located at <code>/usr/share/doc/alacritty/example/alacritty.yml</code>) can be copied to the config folder, or one can be created.</p>
+
+<p>Note: Alacritty recently changed from using <code>yml</code> to <code>toml</code> for config. I will include both types here incase an older version is being used.</p>
+<h4 id=useful-config-tips>Useful Config Tips</h4>
+
+<p>To change cursor from block to beam:</p>
+
+<p><strong>yml</strong></p>
+
+<pre><code class="language-yml">cursor:
+  style:
+    shape: Beam
+</code></pre>
+
+<p><strong>toml</strong></p>
+
+<pre><code class="language-toml">[cursor.style]
+shape = &quot;Beam&quot;
+</code></pre>
+
+<p>To change default window size on opening:</p>
+
+<p><strong>yml</strong></p>
+
+<pre><code class="language-yml">window:
+  dimensions:
+    columns: 100
+    lines: 25
+</code></pre>
+
+<p><strong>toml</strong></p>
+
+<pre><code class="language-toml">[window.dimensions]
+columns = 100
+lines = 25
+</code></pre>
+
+<p>By default, links are clickable without holding down <code>ctrl</code>. This can be annoying, to enable clicking links only when holding control, use:</p>
+
+<p><strong>yml</strong></p>
+
+<pre><code class="language-yml">hints:
+  enabled:
+  - regex: &quot;(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)\
+            [^\u0000-\u001F\u007F-\u009F&lt;&gt;\&quot;\\s{-}\\^⟨⟩`]+&quot;
+    command: xdg-open
+    post_processing: true
+    mouse:
+      enabled: true
+      mods: Control
+</code></pre>
+
+<p><strong>toml</strong></p>
+
+<pre><code class="language-toml">[[hints.enabled]]
+command = &quot;xdg-open&quot;
+post_processing = true
+regex = &quot;(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-&lt;&gt;\&quot;\\s{-}\\^⟨⟩`]+&quot;
+
+[hints.enabled.mouse]
+enabled = true
+mods = &quot;Control&quot;
+</code></pre>
+
+<p>Source for this config trick: <a href="https://mitjafelicijan.com/alacritty-open-links-with-modifier.html" target="_self">https://mitjafelicijan.com/alacritty-open-links-with-modifier.html</a>
+</p>
+<h3 id=usage>Usage</h3>
+
+<p>Vi mode</p>
+<h3 id=troubleshooting>Troubleshooting</h3>
+<h4 id=wayland-titlebar>Wayland Titlebar</h4>
+
+<p>In order to get a titlebar on Wayland, it is neccessary to set the <code>WAYLAND_DISPLAY</code> environmental variable to empty. This can be done in the same command that launches Alacritty:</p>
+
+<pre><code>env -u WAYLAND_DISPLAY alacritty
+</code></pre>
+<h4 id=ueberzug-issues>Ueberzug Issues</h4>
+
+<p>Ueberzug is a program to display images "in" any terminal emulator, It works by calculating the position a window should be in, then opening the image in a seperate borderless window and "locking" it to the terminal. Ueberzug is used in a variety of programs, for example <a href="fileAccess.html#ranger" target="_self">ranger file manager</a>
+, and my own <a href="/Wiki/MyPrograms/gotube.html" target="_self">GoTube YouTube terminal client</a>
+.<br>
+By default, Alacritty will "pad" the window only on the right and the bottom. This padding occurs when the window size is not an exact multiple of the cell size. Ueberzug does not detect this, and thus the images will be misaligned. Enabling "Dynamic Padding" solves this issue by making alaceritty pad evenly on all sides.</p>
+
+<p>To enable dynamic padding, add the following to <code>alacritty.toml</code></p>
+
+<p><strong>yml</strong></p>
+
+<pre><code class="language-yml">window:
+  dynamic_padding: true
+</code></pre>
+
+<p><strong>toml</strong></p>
+
+<pre><code class="language-toml">[window]
+dynamic_padding = true
+</code></pre>
+<h2 id=xfce-terminal>Xfce Terminal</h2>
+
+<p><a href="https://gitlab.xfce.org/apps/xfce4-terminal" target="_self">Xfce Terminal</a>
+ comes by default in the <a href="xfce4.html" target="_self">Xfce4 Desktop Environment</a>
+.</p>
+<h2 id=cool-retro-term>Cool Retro Term</h2>
+
+<p><a href="https://github.com/Swordfish90/cool-retro-term" target="_self">Cool Retro Term</a>
+ is a terminal emulator designed to look like a CRT display, written using the <a href="https://doc.qt.io/qt.html#qt5" target="_self">QT5 UI library</a>
+.</p>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>
