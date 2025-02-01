@@ -9,15 +9,19 @@ This section of my website is a wiki-style database of infomation about my own p
 \customDiv start wiki_contents
 
 | :-: | :-: | :-: |
-| [GoTube Terminal YouTube Client Manager](myprograms/gotube.md) | [XFCE4-Laptop-Config](dotfiles/xfce4/xfceKeyboardShortcuts.md) | |
+| [GoTube Terminal YouTube Client Manager](myprograms/gotube.md) | | |
 
+### My Setup/Dotfiles
+
+| :-: | :-: | :-: |
+| [XFCE4-Laptop-Config](dotfiles/xfce4/xfceKeyboardShortcuts.md) | [Alacritty](dotfiles/alacritty.md) | [Other](dotfiles/other.md) |
 
 ### Other Programs
 
 | :-: | :-: | :-: |
-| [Linux Distrobutions](linux/distros.md) | [Text Editors](linux/textEditors.md) | [Terminal Emulators](linux/terminals.md) |
+| [Linux Distributions](linux/distros.md) | [Text Editors](linux/textEditors.md) | [Terminal Emulators](linux/terminals.md) |
 | [File Access](linux/fileAccess.md) | [System Monitors](linux/systemMonitors.md) | [Xfce4 Desktop Environment](linux/xfce4.md) |
-| [Coreutils](linux/coreutils.md) | | |
+| [Coreutils](linux/coreutils.md) | [yt-dlp](linux/yt-dlp) | [mpv](linux/mpv.md) |
 
 ### Games
 
@@ -28,5 +32,6 @@ This section of my website is a wiki-style database of infomation about my own p
 
 | :-: | :-: | :-: |
 | [Useful Websites](usefulwebsites.md)| | |
+
 
 \customDiv end
