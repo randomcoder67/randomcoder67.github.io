@@ -78,7 +78,7 @@ func renderFile(inputFile string, outputFile string, level int) {
 	
 	var finalHTML strings.Builder
 	finalHTML.WriteString(TITLE_START)
-	finalHTML.WriteString(strings.Repeat("../", level))
+	//finalHTML.WriteString(strings.Repeat("../", level))
 	finalHTML.WriteString(TITLE_MIDDLE)
 	finalHTML.WriteString(headings[0].Title)
 	finalHTML.WriteString(TITLE_END)

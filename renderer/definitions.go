@@ -24,7 +24,7 @@ const TITLE_START string = `<!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="`
 
-const TITLE_MIDDLE = `style.css">
+const TITLE_MIDDLE = `/style.css">
 <title>`
 
 const TITLE_END string = `</title>
