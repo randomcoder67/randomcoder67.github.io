@@ -149,6 +149,8 @@ ul ul {
   list-style-type: " - ";
 }
 
+/* Wiki Contents */
+
 .wiki_contents table {
 	margin-left: auto;
 	margin-right: auto;
@@ -166,4 +168,102 @@ ul ul {
 
 .wiki_contents table a {
 	color: #b6b3eb;
+}
+
+/* Table of Contents */
+
+#toc, .toc {
+	border: 1px solid #f2f2f2;
+	border-spacing: 3px;
+	background-color: #1a1a1a;
+	display: table;
+	padding: 7px;
+	font-size: 95%;
+}
+
+#toc #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle {
+	direction: ltr;
+	text-align: center;
+}
+
+#toc ul, .toc ul {
+    list-style-type: none;
+    list-style-image: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+#toc li {
+	line-height: 1.2em;
+}
+
+#toc a:hover {
+	text-decoration: underline;
+}
+
+.toctext {
+	display: table-cell;
+	text-decoration: inherit;
+}
+
+.tocnumber {
+	display: table-cell;
+	text-decoration: inherit;
+	padding-left: 0;
+	padding-right: 0.5em;
+	color: #fff;
+}
+
+.toctoggle {
+	font-size: 94%;
+	user-select: none;
+}
+
+#toc h2, .toc h2 {
+	display: inline;
+	border: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+#toc ul ul, .toc ul ul {
+	margin: 0 0 0 2em;
+}
+
+/* Info Box */
+
+.infobox {
+    border: 1px solid #f2f2f2;
+    border-spacing: 3px;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    margin: 0.5em 0 0.5em 1em;
+    padding: 0.2em;
+    float: right;
+    clear: right;
+    font-size: 88%;
+    width: 350px;
+    line-height: 1.5em;
+}
+
+.infobox caption {
+    font-size: 200%;
+    font-weight: bold;
+    padding: 0.2em;
+    text-align: center;
+}
+
+.infobox img {
+	max-width: 300px;
+	max-height: 300px;
+	width: 100%;
+	height: 100%;
+}
+
+.infobox .item {
+	font-weight: bold;
+}
+
+.infobox .image_caption {
+	text-align: center;
 }
