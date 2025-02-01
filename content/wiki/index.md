@@ -9,8 +9,7 @@ This section of my website is a wiki-style database of infomation about my own p
 \customDiv start wiki_contents
 
 | :-: | :-: | :-: |
-| [GoTube Terminal YouTube Client Manager](myprograms/gotube.md) | | |
-| | | [XFCE4-Laptop-Config](dotfiles/xfce4/xfceKeyboardShortcuts.md) |
+| [GoTube Terminal YouTube Client Manager](myprograms/gotube.md) | [XFCE4-Laptop-Config](dotfiles/xfce4/xfceKeyboardShortcuts.md) | |
 
 
 ### Other Programs
@@ -20,10 +19,14 @@ This section of my website is a wiki-style database of infomation about my own p
 | [File Access](linux/fileAccess.md) | [System Monitors](linux/systemMonitors.md) | [Xfce4 Desktop Environment](linux/xfce4.md) |
 | [Coreutils](linux/coreutils.md) | | |
 
+### Games
+
+| :-: | :-: | :-: |
+| [Minecraft 1.21.1 Setup](games/minecraft1.21.1Setup.md) | | |
+
 ### Other
 
 | :-: | :-: | :-: |
 | [Useful Websites](usefulwebsites.md)| | |
 
 \customDiv end
-
