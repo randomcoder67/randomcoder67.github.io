@@ -1,0 +1,150 @@
+body {
+  background-image: url('background_image.webp');
+  background-position: auto;
+  background-repeat: repeat;
+  background-size: auto;
+  margin: 0;
+  color: #e6e1dc;  
+}
+
+a {
+  color: #519f50;
+}
+
+h1 {
+  font-size: 30;
+}
+
+.hanging-sign {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+    background-color: #2b2b2b;
+    padding: 20px 100px;
+    border-radius: 25px 25px 25px 25px;
+    border: 6px solid #5a647e;
+}
+
+.hanging-sign::before,
+.hanging-sign::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 55px;
+    background-color: #5A647E;
+    top: -55px;
+}
+
+.hanging-sign::before {
+    left: 10%;
+}
+
+.hanging-sign::after {
+    right: 10%;
+}
+
+.page-wrapper {
+	min-height: 100vh;
+	position: relative;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	background-color: #ffc66d;
+	width: 100%;
+}
+
+.main-content {
+	display: inline-block;
+
+	position: relative;
+	left: calc(50% + 100px);
+	width: calc(100% - 250px);
+  top: 0;
+	transform: translate(-50%);
+	padding-bottom: 50px;
+}
+
+.actual-content {
+	margin-top: 30px;
+	background-color: #2b2b2b;
+	border-radius: 25px 25px 25px 25px;
+  border: 4px solid #a5c261;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 8px 0px 8px;
+}
+
+
+.center-div {
+	text-align: center;
+}
+
+
+p {
+  text-align: left;
+}
+
+.left-pane {
+  display: inline-block;
+}
+
+.left-title {
+  border-radius: 0px 25px 25px 0px;
+  border: 4px solid #ffc66d;
+  
+  margin-top: 0px;
+	background-color: #2b2b2b;
+  display: inline-block;
+  width: 180px;
+  
+  position: absolute;
+  top: 25px;
+  padding: 10px 10px 10px 10px;
+  left: 0;
+  font-size: 22px;
+}
+
+.left-bar {
+  font-size: 24px;
+	border-radius: 0px 25px 25px 0px;
+  border: 4px solid #ffc66d;
+  
+  margin-top: 15px;
+	background-color: #2b2b2b;
+  display: inline-block;
+  width: 200px;
+  
+  position: absolute;
+  top: 192px;
+  left: 0;
+}
+
+.left-bar-two {
+  font-size: 24px;
+  border-radius: 0px 25px 25px 0px;
+  border: 4px solid #ffc66d;
+  
+  margin-top: 15px;
+	background-color: #2b2b2b;
+  display: inline-block;
+  width: 200px;
+  
+  position: absolute;
+  top: 575px;
+  left: 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding: 0 0 0 30px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+ul ul {
+  list-style-type: " - ";
+}
