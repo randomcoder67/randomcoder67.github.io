@@ -17,7 +17,7 @@ However for phones or older PCs, H264 may be desired. This is covered below in t
 
 `yt-dlp -F url` is used to list the available video formats. This will return a table with entries similar to the following:
 
-![yt-dlp -F output example](/images/ytdlpOutput.png)
+![yt-dlp -F output example](/images/programScreenshots/ytdlpOutput.png)
 
 The columns are labelled at the top, and most are self-explanatory.  
 The second column shows the container the video will be stored in and the eighth column shows the codec the video is encoded in. Note VP9 is `vp09`, H264 is `avc1` and [AV1](https://en.wikipedia.org/wiki/AV1) is `av01`.  
