@@ -21,7 +21,7 @@ This section of my website is a wiki-style database of infomation about my own p
 | :-: | :-: | :-: |
 | [Linux Distributions](linux/distros.md) | [Text Editors](linux/textEditors.md) | [Terminal Emulators](linux/terminals.md) |
 | [File Access](linux/fileAccess.md) | [System Monitors](linux/systemMonitors.md) | [Xfce4 Desktop Environment](linux/xfce4.md) |
-| [Coreutils](linux/coreutils.md) | [yt-dlp](linux/yt-dlp) | [mpv](linux/mpv.md) |
+| [Coreutils](linux/coreutils.md) | [yt-dlp](linux/ytdlp.md) | [mpv](linux/mpv.md) |
 
 ### Games
 
@@ -33,5 +33,5 @@ This section of my website is a wiki-style database of infomation about my own p
 | :-: | :-: | :-: |
 | [Useful Websites](usefulwebsites.md)| | |
 
-
 \customDiv end
+
