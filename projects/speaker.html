@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+<title>Speaker Made from Old Laptop Speakers</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/outside/index.html">Outside</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="speaker made from old laptop speakers">Speaker Made from Old Laptop Speakers</h1>
+</div>
+</div>
+<div class="actual-content">
+<p>This project was inspired by <a href="https://www.youtube.com/watch?v=WLP_L7Mgz6M" target="_self">DIY Perks video</a>
+ on uses for old laptops. I decided to try and build a speaker for my University room, using some old laptop speakers and a Raspberry Pi</p>
+<h2 id=components>Components</h2>
+<h3 id=speakers>Speakers</h3>
+
+<p>Laptop speakers will be loud enough for my use case, as I am in a University room, so I don't want it to make too much noise and annoy the neighbours.<br>
+I bought a broken Toshiba Satellite Pro L300D for £20, as review said it had decent speakers.</p>
+<h3 id=raspberry-pi>Raspberry Pi</h3>
+
+<p>I decided to use a Raspberry Pi, instead of just the Bluetooth reciever DIY Perks uses, for two main reasons:</p>
+
+<ol>
+<li>Bluetooth is annoying, and bluetooth recieveres have a tendancy to make really loud "DEVICE CONNECTED" noises, which I find annoying</li>
+<li>If I use a Raspberry Pi, the speaker can be it's own distinct music player, and doesn't rely on other devices being connected. It would be nice to, for example, come back into my room and have music playing, even if I took both my phone and laptop with me.</li>
+</ol>
+
+<p>Our University computer science department gives each student some storage space on an SSH server, so I can use that to transfer music back and forth to the Raspberry Pi without physically connecting to it.<br>
+It can also be used to control the music playback, although a simpler solution to this would be nice (discussed later).</p>
+
+<p>Originally I purchased a Raspberry Pi Zero 2 W, and planned to use the GPIO headphone jack functionality to get audio out to the amplifier board. I realised after recieving it however that this audio needs filtering. This would require a bunch more componentes, so I decided to just return it and buy a Pi 3 A+, as it was only about £5 more expensive, and has a headphone jack.</p>
+<h3 id=case>Case</h3>
+
+<p>For the case I am using PVC Foam Board, as it is easy to glue together, and pretty cheap.<br>
+I got <a href="https://www.amazon.co.uk/dp/B08M3FYVYW" target="_self">5 Sheets from Amazon</a>
+</p>
+<h3 id=other-components>Other Components</h3>
+<h4 id=amplifier>Amplifier</h4>
+
+<p>This cheap amplifier from Amazon was used: <a href="https://www.amazon.co.uk/dp/B09YYGBZ59" target="_self">Ticfox Digital Amplifier Board 5Wx2</a>
+<br>
+5 amplifier are actually included, I didn't realise that until they arrived, so I guess I have a lot of spares now.</p>
+<h2 id=build>Build</h2>
+<h2 id=software>Software</h2>
+
+<p>I wrote a Bash script to control the music playback.</p>
+<h2 id=final-result>Final Result</h2>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>
