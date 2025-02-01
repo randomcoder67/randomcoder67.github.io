@@ -148,3 +148,22 @@ li {
 ul ul {
   list-style-type: " - ";
 }
+
+.wiki_contents table {
+	margin-left: auto;
+	margin-right: auto;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-style: hidden;
+	width: 90%;
+}
+
+.wiki_contents table td, .wiki_contents table th {
+	border: 2px solid black;
+	padding: 10px;
+	font-size: 120%;
+}
+
+.wiki_contents table a {
+	color: #b6b3eb;
+}
