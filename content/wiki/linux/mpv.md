@@ -2,7 +2,7 @@
 
 \infobox
 title: mpv
-img: /images/programScreenshots/mpvExample.png
+img: /images/programScreenshots/mpv-example.png
 caption: A YouTube video playing in mpv
 Website|[mpv.io](https://mpv.io/)
 GitHub|[mpv GitHub](https://github.com/mpv-player/mpv/)
