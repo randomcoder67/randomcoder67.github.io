@@ -14,25 +14,25 @@ This section of my website is a wiki-style database of infomation about my own p
 ### My Setup/Dotfiles
 
 | :-: | :-: | :-: |
-| [XFCE4-Laptop-Config](dotfiles/xfce4/xfceKeyboardShortcuts.md) | [Alacritty](dotfiles/alacritty.md) | [Other](dotfiles/other.md) |
-| [i3 Config](dotfiles/i3/i3.md) | [i3 Keyboard Shortcuts](dotfiles/i3/i3KeyboardShortcuts.md) | |
+| [XFCE4-Laptop-Config](dotfiles/xfce4/xfce-keyboard-shortcuts.md) | [Alacritty](dotfiles/alacritty.md) | [Other](dotfiles/other.md) |
+| [i3 Config](dotfiles/i3/i3.md) | [i3 Keyboard Shortcuts](dotfiles/i3/i3-keyboard-shortcuts.md) | |
 
 ### Other Programs
 
 | :-: | :-: | :-: |
-| [Linux Distributions](linux/distros.md) | [Text Editors](linux/textEditors.md) | [Terminal Emulators](linux/terminals.md) |
-| [File Access](linux/fileAccess.md) | [System Monitors](linux/systemMonitors.md) | [Xfce4 Desktop Environment](linux/xfce4.md) |
-| [Coreutils](linux/coreutils.md) | [yt-dlp](linux/ytdlp.md) | [mpv](linux/mpv.md) |
+| [Linux Distributions](linux/distros.md) | [Text Editors](linux/text-editors.md) | [Terminal Emulators](linux/terminals.md) |
+| [File Access](linux/file-access.md) | [System Monitors](linux/system-monitors.md) | [Xfce4 Desktop Environment](linux/xfce4.md) |
+| [Coreutils](linux/coreutils.md) | [yt-dlp](linux/yt-dlp.md) | [mpv](linux/mpv.md) |
 
 ### Games
 
 | :-: | :-: | :-: |
-| [Minecraft 1.21.1 Setup](games/minecraft1.21.1Setup.md) | | |
+| [Minecraft 1.21.1 Setup](games/minecraft-1.21.1-setup.md) | | |
 
 ### Other
 
 | :-: | :-: | :-: |
-| [Useful Websites](usefulwebsites.md)| | |
+| [Useful Websites](useful-websites.md)| | |
 
 \customDiv end
 

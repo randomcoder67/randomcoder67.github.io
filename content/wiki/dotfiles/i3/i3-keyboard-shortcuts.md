@@ -46,6 +46,7 @@
 | Colour Picker           | `Super+y`       | Uses [xcolor](https://github.com/Soft/xcolor)                                                         |
 | Toggle Airplane Mode    | `Super+Shift+a` | Turns WiFi on and off                                                                                 |
 | Restart i3              | `Alt+Ctrl+r`    |                                                                                                       |
+| Randomise Wallpaper     | `Super+Shift+b` |                                                                                                       |
 
 ## System
 

@@ -9,5 +9,5 @@
 
 ## Other
 
-* [Phone Replacements](phone_replacements.md)
+* [Phone Replacements](phone-replacements.md)
 * [Future Project Ideas](future.md)
