@@ -15,7 +15,7 @@ This section of my website is a wiki-style database of infomation about my own p
 
 | :-: | :-: | :-: |
 | [XFCE4-Laptop-Config](dotfiles/xfce4/xfce-keyboard-shortcuts.md) | [Alacritty](dotfiles/alacritty.md) | [Other](dotfiles/other.md) |
-| [i3 Config](dotfiles/i3/i3.md) | [i3 Keyboard Shortcuts](dotfiles/i3/i3-keyboard-shortcuts.md) | |
+| [i3 Config](dotfiles/i3/i3.md) | [i3 Keyboard Shortcuts](dotfiles/i3/i3-keyboard-shortcuts.md) | [Terminal Directory Navigation](dotfiles/terminal-directory-navigation.md) |
 
 ### Other Programs
 
