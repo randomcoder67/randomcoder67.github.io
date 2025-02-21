@@ -59,6 +59,7 @@ The default Minecraft launcher is not great, it's very slow and it's difficult t
 * [Visuality](https://modrinth.com/mod/visuality) - A bunch of little effects
 * [Better Clouds](https://modrinth.com/mod/better-clouds)
 * [Distant Horizons](https://modrinth.com/mod/distanthorizons) - LOD mod, enables much longer render distance
+* [Particle Rain](https://modrinth.com/mod/particle-rain/) - Pretty weather effects
 
 ### Audio
 
@@ -67,6 +68,7 @@ The default Minecraft launcher is not great, it's very slow and it's difficult t
 * [Charmonium](https://modrinth.com/mod/charmonium) - AmbientSounds 6 alternative, only install one
 * [ExtraSounds](https://modrinth.com/mod/extrasounds) - UI sounds
 * [Auditory Continued](https://modrinth.com/mod/auditory-continued) - Better block sounds
+* [Cool Rain](https://modrinth.com/mod/coolrain) - Realistic rain sounds based on blocks
 
 ### UI
 
@@ -116,10 +118,22 @@ The default Minecraft launcher is not great, it's very slow and it's difficult t
 * [Trample No More](https://modrinth.com/mod/trample-no-more) - Crops won't be trampled when wearing leather or Feather Falling boots
 * [Advancement Frames](https://www.curseforge.com/minecraft/mc-mods/advancement-frames) - Frames to display your advancements
 * [Map Atlases](https://www.curseforge.com/minecraft/mc-mods/map-atlases) - Not updated to 1.21.1
+* [Sword Blocking Mechanics](https://www.curseforge.com/minecraft/mc-mods/sword-blocking-mechanics) - Brings back sword blocking, imo shields are overpowered
 
 ### Dependancies
 
-* ADD IN HERE
+* [Architectury API](https://www.curseforge.com/minecraft/mc-mods/architectury-api)
+* [Bookshelf](https://www.curseforge.com/minecraft/mc-mods/bookshelf)
+* [Cloth Config API](https://www.curseforge.com/minecraft/mc-mods/cloth-config)
+* [CreativeCore](https://www.curseforge.com/minecraft/mc-mods/creativecore)
+* [Collective](https://www.curseforge.com/minecraft/mc-mods/collective)
+* [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api)
+* [Forge Config API Port](https://www.curseforge.com/minecraft/mc-mods/forge-config-api-port-fabric)
+* [Moonlight Lib](https://www.curseforge.com/minecraft/mc-mods/selene)
+* [Prickle Fabric](https://www.curseforge.com/minecraft/mc-mods/prickle)
+* [Puzzles Lib](https://www.curseforge.com/minecraft/mc-mods/puzzles-lib)
+* [TCDCommons API](https://modrinth.com/mod/tcdcommons)
+* [YetAnotherConfigLib](https://modrinth.com/mod/yacl)
 
 ## Datapacks
 
@@ -215,3 +229,8 @@ The default Minecraft launcher is not great, it's very slow and it's difficult t
 
 * `doInsomnia` gamerule is set to false, as Phantoms attacking the player when they don't sleep only *encourages* overuse of beds. Also Phantoms just aren't fun
 * `doFireTick` gamerule is set to false, as fire destroying your wood builds is just annoying
+
+## Extra
+
+* https://unmined.net/ - Mapping tool
+* https://modrinth.com/mod/oritech - Tech mod, looks fun
