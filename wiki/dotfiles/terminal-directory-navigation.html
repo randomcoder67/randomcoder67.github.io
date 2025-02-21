@@ -84,6 +84,30 @@
 		</li>
 	</ul>
 		</li>
+		<li>
+			<a href="#tui">
+				<span class="tocnumber">2</span>
+				<span class="toctext">TUI</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#permenant-shortcuts">
+				<span class="tocnumber">2.1</span>
+				<span class="toctext">Permenant Shortcuts</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#directory_bookmarks">
+				<span class="tocnumber">2.2</span>
+				<span class="toctext">directory_bookmarks</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
 	</ul></div>
 <h2 id=cli>CLI</h2>
 <p>In order to speed up moving around directories in the terminal, I have a few shortcuts</p>
@@ -101,10 +125,7 @@ alias wor='cd ~/Work/'
 alias loc='cd ~/.local/share/'
 alias bin='cd ~/.local/bin/'
 alias con='cd ~/.config/'
-alias cur='cd ~/Music/CurrentPlaylist/'
-alias dot='cd ~/Programs/dotfiles/'
 alias bac='cd ~/Downloads/BackupMount/'
-alias web='cd ~/Programs/website/GitHubWebsite/'
 </code></pre>
 <h3 id=directory-bookmakrs>directory_bookmakrs</h3>
 
@@ -130,6 +151,34 @@ alias bmc='directory_bookmarks current'
 <h3 id=other>Other</h3>
 
 <p><code>alias cdp='cd - &gt; /dev/null'</code> - cd to the previous directory, without printing it's name</p>
+<h2 id=tui>TUI</h2>
+
+<p>I use <a href="https://github.com/ranger/ranger" target="_self">ranger</a>
+ as my TUI file manager.</p>
+<h3 id=permenant-shortcuts>Permenant Shortcuts</h3>
+
+<p>In ranger, you can use <code>m</code> to mark directories with a single letter, and then backtick to jump to that directory</p>
+
+<p>I use these bookmarks, which are as similar as possible to the quick cd aliases:</p>
+
+<pre><code class="language-conf">h:/home/user
+d:/home/user/Documents
+l:/home/user/Downloads
+m:/home/user/Music
+v:/home/user/Videos
+i:/home/user/Pictures
+p:/home/user/Programs
+w:/home/user/Work
+s:/home/user/.local/share
+b:/home/user/.local/bin
+c:/home/user/.config
+e:/home/user/Downloads/BackupMount
+</code></pre>
+
+<p><code>h</code> is a replacement for just typing <code>cd</code>, taking you to the home directory</p>
+<h3 id=directory-bookmarks>directory_bookmarks</h3>
+
+<p>When using directory_bookmarks.c in the terminal, the bookmarks are also added to ranger, and can be used by typing <code>go</code> followed by the bookmark name.</p>
 </div>
 </div><footer>footer test</footer>
 </div>
