@@ -88,8 +88,10 @@
 | Go Back and Forth Between Workspaces | `Super+Tab`         |             |
 | Previous Workspace                   | `Super+,`           |             |
 | Next Workspace                       | `Super+.`           |             |
-| Go to Workspace 1-7                  | `Super+[1-7]`       |             |
-| Move Window to Workspace 1-7         | `Super+Shift+[1-7]` |             |
+| Go to Workspace 1-4                  | `Super+[1-4]`       |             |
+| Toggle Temporary Workspace           | `Super+a`           |             |
+| Move Window to Workspace 1-4         | `Super+Shift+[1-4]` |             |
+| Move Window to Temporary Workspace   | `Super+Shift+a`     |             |
 | Move Workspace to Lower Monitor      | `Super+Ctrl+'`      |             |
 | Move Workspace to Upper Monitor      | `Super+Ctrl+#`      |             |
 
@@ -105,3 +107,4 @@
 | Toggle Fullscreen                                | `Super+Shift+f`     |             |
 | Toggle Between Floating and Tiling               | `Super+Shift+Space` |             |
 | Change Focus Between Tiling and Floating Windows | `Super+Space`       |             |
+| Toggle Window Sticky (show on all workspaces)    | `Super+Ctrl+x`      |             |

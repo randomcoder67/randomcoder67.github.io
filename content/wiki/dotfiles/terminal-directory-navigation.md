@@ -19,10 +19,7 @@ alias wor='cd ~/Work/'
 alias loc='cd ~/.local/share/'
 alias bin='cd ~/.local/bin/'
 alias con='cd ~/.config/'
-alias cur='cd ~/Music/CurrentPlaylist/'
-alias dot='cd ~/Programs/dotfiles/'
 alias bac='cd ~/Downloads/BackupMount/'
-alias web='cd ~/Programs/website/GitHubWebsite/'
 ```
 
 ### directory_bookmakrs
@@ -49,3 +46,35 @@ I use [Fasd](https://github.com/whjvenyl/fasd) for quickly jumping to recently u
 ### Other
 
 `alias cdp='cd - > /dev/null'` - cd to the previous directory, without printing it's name
+
+## TUI
+
+I use [ranger](https://github.com/ranger/ranger) as my TUI file manager.
+
+### Permenant Shortcuts
+
+In ranger, you can use `m` to mark directories with a single letter, and then backtick to jump to that directory
+
+I use these bookmarks, which are as similar as possible to the quick cd aliases:
+
+``` conf
+h:/home/user
+d:/home/user/Documents
+l:/home/user/Downloads
+m:/home/user/Music
+v:/home/user/Videos
+i:/home/user/Pictures
+p:/home/user/Programs
+w:/home/user/Work
+s:/home/user/.local/share
+b:/home/user/.local/bin
+c:/home/user/.config
+e:/home/user/Downloads/BackupMount
+```
+
+`h` is a replacement for just typing `cd`, taking you to the home directory
+
+### directory_bookmarks
+
+When using directory_bookmarks.c in the terminal, the bookmarks are also added to ranger, and can be used by typing `go` followed by the bookmark name.
+
