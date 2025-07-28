@@ -22,6 +22,8 @@ It seems to occur on panel with the model number 355608-A9
 
 The fix is to change the screen timings. By default MuOS sets the screen refresh rate to 59.98Hz. This guide changes that to match Knulli, which runs the screen at 59.94Hz. In theory this introduces more stutter, but it is unlikely to be noticeable.
 
+### Process
+
 1. Take the SD card out of the handheld and put in in your computer
 2. Mount `/dev/sdX5` where X is the device letter of the SD card
 3. Backup the folder `mountPoint/opt/muos/device/rg35xx-plus/package/` (replace `rg35xx-plus` with your device)
