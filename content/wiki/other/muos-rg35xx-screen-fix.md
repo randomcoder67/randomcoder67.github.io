@@ -7,7 +7,8 @@ On the newer revisions of the RG35XX devices from Anbernic, MuOS Pixie has an is
 * [Example 1](https://ibb.co/1GxjqSCd)
 * [Example 2](https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2F504177hj16ke1.jpg%3Fwidth%3D320%26crop%3Dsmart%26auto%3Dwebp%26s%3D4af0907a67bf38dfc6977cd23dad085c68181c36)
 
-The issue is more noticeable on high brightness levels, and gets worse the longer the device is used for
+The issue is more noticeable on high brightness levels, and gets worse the longer the device is used for  
+It seems to occur on panel with the model number 355608-A9
 
 ## The Fix
 
@@ -41,7 +42,8 @@ The fix is to change the screen timings
 
 ## Text to Replace
 
-[On GitHub](https://gist.github.com/randomcoder67/c0660e56337ab3d935810c310be31324)
+[On GitHub](https://gist.github.com/randomcoder67/c0660e56337ab3d935810c310be31324)  
+Copy this text:
 
 ```
 		lcd0@01c0c000 {
