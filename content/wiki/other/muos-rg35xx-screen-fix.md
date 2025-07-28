@@ -20,7 +20,7 @@ It seems to occur on panel with the model number 355608-A9
 	* Or possibly corrupt your MuOS install
 		* I recommend backing it up with `dd` first (`sudo dd if=/dev/sdX bs=1M status=progress of=backup.iso`)
 
-The fix is to change the screen timings
+The fix is to change the screen timings. By default MuOS sets the screen refresh rate to 59.98Hz. This guide changes that to match Knulli, which runs the screen at 59.94Hz. In theory this introduces more stutter, but it is unlikely to be noticeable.
 
 1. Take the SD card out of the handheld and put in in your computer
 2. Mount `/dev/sdX5` where X is the device letter of the SD card
