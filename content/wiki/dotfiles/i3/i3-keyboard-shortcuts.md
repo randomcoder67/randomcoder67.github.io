@@ -2,19 +2,20 @@
 
 ## Program Openers
 
-| Program               | Shortcut       | Explanation                |
-| :-------------------: | :------------: | :------------------------: |
-| Main Terminal         | `Shift+Return` | Alacritty                  |
-| Backup Terminal       | `Shift+Return` | xterm                      |
-| Browser               | `Shift+w`      | Firefox                    |
-| GoTube                | `Shift+s`      | Opens in Alacritty         |
-| Terminal File Manager | `Shift+e`      | Ranger, opens in Alacritty |
-| Calculator            | `Shift+c`      | qalc, opens in Alacritty   |
-| btop                  | `Shift+b`      | Opens in Alacritty         |
-| nethogs               | `Shift+n`      | Opens in Alacritty         |
-| nethogs               | `Shift+n`      | Opens in Alacritty         |
-| Pulsemixer            | `Shift+g`      | Opens in Alacritty         |
-| Cava Audio Visualiser | `Shift+u`      | Opens in Alacritty         |
+| Program                | Shortcut        | Explanation                |
+| :--------------------: | :-------------: | :------------------------: |
+| Main Terminal          | `Super+Return`  | Alacritty                  |
+| Backup Terminal        | `Super+Return`  | xterm                      |
+| Browser                | `Super+w`       | Firefox                    |
+| Graphical File Manager | `Super+Shift+e` | Thunar                     |
+| GoTube                 | `Super+s`       | Opens in Alacritty         |
+| Terminal File Manager  | `Super+e`       | Ranger, opens in Alacritty |
+| Calculator             | `Super+c`       | qalc, opens in Alacritty   |
+| btop                   | `Super+b`       | Opens in Alacritty         |
+| nethogs                | `Super+n`       | Opens in Alacritty         |
+| nethogs                | `Super+n`       | Opens in Alacritty         |
+| Pulsemixer             | `Super+g`       | Opens in Alacritty         |
+| Cava Audio Visualiser  | `Super+u`       | Opens in Alacritty         |
 
 ## Music
 
