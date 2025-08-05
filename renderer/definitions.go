@@ -52,6 +52,7 @@ const NAV_BAR string = `<div class="left-pane">
         <li><a href="/reviews/index.html">Reviews</a></li>
         <li><a href="/projects/index.html">Projects</a></li>
         <li><a href="/outside/index.html">Outside</a></li>
+        <li><a href="/other/index.html">Other</a></li>
         <li><a href="/about.html">About</a></li>
         <li><a href="/contributions.html">Contributions</a></li>
         <li><a href="/about.html#contact">Contact</a></li>
