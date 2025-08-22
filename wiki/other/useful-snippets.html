@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+<title>Useful Snippets</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/outside/index.html">Outside</a></li>
+        <li><a href="/other/index.html">Other</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="useful snippets">Useful Snippets</h1>
+</div>
+</div>
+<div class="actual-content">
+<p>Most of these aren't mine, sourced where possible</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#remove-duplicates-while-maintaining-order">
+				<span class="tocnumber">1</span>
+				<span class="toctext">Remove Duplicates While Maintaining Order</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#explanation">
+				<span class="tocnumber">1.1</span>
+				<span class="toctext">Explanation</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=remove-duplicates-while-maintaining-order>Remove Duplicates While Maintaining Order</h2>
+
+<p><code>cat -n file_name | sort -uk2 | sort -n | cut -f2-</code></p>
+<h3 id=explanation>Explanation</h3>
+
+<ol>
+<li>Use <code>cat -n</code> to prepend line numbers</li>
+<li>Use <code>sort -u</code> remove duplicate data (<code>-k2</code> says 'start at field 2 for sort key')</li>
+<li>Use <code>sort -n</code> to sort by prepended number</li>
+<li>Use <code>cut</code> to remove the line numbering (<code>-f2-</code> says 'select field 2 till end')</li>
+</ol>
+
+<p><a href="https://stackoverflow.com/a/20639730" target="_self">Credit to Digital Trauma on StackOverflow</a>
+</p>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>
