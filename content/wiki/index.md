@@ -32,7 +32,7 @@ This section of my website is a wiki-style database of infomation about my own p
 ### Other
 
 | :-: | :-: | :-: |
-| [Useful Websites](other/useful-websites.md)| [MuOS RG35XX Screen Fix](other/muos-rg35xx-screen-fix.md) | |
+| [Useful Websites](other/useful-websites.md) | [Useful Snippets](other/useful-snippets.md) | [MuOS RG35XX Screen Fix](other/muos-rg35xx-screen-fix.md) |
 
 \customDiv end
 
