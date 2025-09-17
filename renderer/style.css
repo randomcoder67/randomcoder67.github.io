@@ -1,0 +1,294 @@
+body {
+  background-image: url('background_image.webp');
+  background-position: auto;
+  background-repeat: repeat;
+  background-size: auto;
+  margin: 0;
+  color: #e6e1dc;  
+}
+
+a {
+  color: #519f50;
+}
+
+h1 {
+  font-size: 30;
+}
+
+h2 {
+  font-size: 20;
+  color: #dd8853;
+}
+
+h3 {
+  font-size: 17;
+  color: #ffc66d;
+}
+
+h4 {
+  font-size: 15;
+  color: #a5c261;
+}
+
+h5 {
+  font-size: 14;
+  color: #6d9cbe;
+}
+
+h6 {
+  font-size: 13;
+  color: #b6b3eb;
+}
+
+.hanging-sign {
+    position: relative;
+    display: inline-block;
+    margin-top: 50px;
+    background-color: #2b2b2b;
+    padding: 20px 100px;
+    border-radius: 25px 25px 25px 25px;
+    border: 6px solid #5a647e;
+}
+
+.hanging-sign::before,
+.hanging-sign::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 55px;
+    background-color: #5A647E;
+    top: -55px;
+}
+
+.hanging-sign::before {
+    left: 10%;
+}
+
+.hanging-sign::after {
+    right: 10%;
+}
+
+.page-wrapper {
+	min-height: 100vh;
+	position: relative;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	background-color: #ffc66d;
+	width: 100%;
+}
+
+.main-content {
+	display: inline-block;
+
+	position: relative;
+	left: calc(50% + 100px);
+	width: calc(100% - 250px);
+  top: 0;
+	transform: translate(-50%);
+	padding-bottom: 50px;
+}
+
+.actual-content {
+	margin-top: 30px;
+	background-color: #2b2b2b;
+	border-radius: 25px 25px 25px 25px;
+  border: 4px solid #a5c261;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 8px 0px 8px;
+}
+
+
+.center-div {
+	text-align: center;
+}
+
+
+p {
+  text-align: left;
+}
+
+.left-pane {
+  display: inline-block;
+}
+
+.left-title {
+  border-radius: 0px 25px 25px 0px;
+  border: 4px solid #ffc66d;
+  
+  margin-top: 0px;
+	background-color: #2b2b2b;
+  display: inline-block;
+  width: 180px;
+  
+  position: absolute;
+  top: 25px;
+  padding: 10px 10px 10px 10px;
+  left: 0;
+  font-size: 22px;
+}
+
+.left-bar {
+  font-size: 24px;
+	border-radius: 0px 25px 25px 0px;
+  border: 4px solid #ffc66d;
+  
+  margin-top: 15px;
+	background-color: #2b2b2b;
+  display: inline-block;
+  width: 200px;
+  
+  position: absolute;
+  top: 192px;
+  left: 0;
+}
+
+.left-bar-two {
+  font-size: 24px;
+  border-radius: 0px 25px 25px 0px;
+  border: 4px solid #ffc66d;
+  
+  margin-top: 15px;
+	background-color: #2b2b2b;
+  display: inline-block;
+  width: 200px;
+  
+  position: absolute;
+  top: 600px;
+  left: 0;
+}
+
+ul {
+  list-style-type: disc;
+  padding: 0 0 0 30px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+ul ul {
+  list-style-type: " - ";
+}
+
+/* Wiki Contents */
+
+.wiki_contents table {
+	margin-left: auto;
+	margin-right: auto;
+	table-layout: fixed;
+	border-collapse: collapse;
+	border-style: hidden;
+	width: 90%;
+}
+
+.wiki_contents table td, .wiki_contents table th {
+	border: 2px solid black;
+	padding: 10px;
+	font-size: 120%;
+}
+
+.wiki_contents table a {
+	color: #b6b3eb;
+}
+
+/* Table of Contents */
+
+#toc, .toc {
+	border: 1px solid #f2f2f2;
+	border-spacing: 3px;
+	background-color: #1a1a1a;
+	display: table;
+	padding: 7px;
+	font-size: 95%;
+}
+
+#toc #toctitle, .toc #toctitle, #toc .toctitle, .toc .toctitle {
+	direction: ltr;
+	text-align: center;
+}
+
+#toc ul, .toc ul {
+    list-style-type: none;
+    list-style-image: none;
+    margin-left: 0;
+    padding: 0;
+}
+
+#toc li {
+	line-height: 1.2em;
+}
+
+#toc a:hover {
+	text-decoration: underline;
+}
+
+.toctext {
+	display: table-cell;
+	text-decoration: inherit;
+}
+
+.tocnumber {
+	display: table-cell;
+	text-decoration: inherit;
+	padding-left: 0;
+	padding-right: 0.5em;
+	color: #fff;
+}
+
+.toctoggle {
+	font-size: 94%;
+	user-select: none;
+}
+
+#toc h2, .toc h2 {
+	display: inline;
+	border: 0;
+	padding: 0;
+	font-weight: bold;
+}
+
+#toc ul ul, .toc ul ul {
+	margin: 0 0 0 2em;
+}
+
+/* Info Box */
+
+.infobox {
+    border: 1px solid #f2f2f2;
+    border-spacing: 3px;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    margin: 0.5em 0 0.5em 1em;
+    padding: 0.2em;
+    float: right;
+    clear: right;
+    font-size: 88%;
+    width: 350px;
+    line-height: 1.5em;
+}
+
+.infobox caption {
+    font-size: 200%;
+    font-weight: bold;
+    padding: 0.2em;
+    text-align: center;
+}
+
+.infobox img {
+	max-width: 300px;
+	max-height: 300px;
+	width: 100%;
+	height: 100%;
+}
+
+.infobox .item {
+	font-weight: bold;
+}
+
+.infobox .image_caption {
+	text-align: center;
+}
