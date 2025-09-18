@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+<title>MuOS RG35XX Plus Screen Issue Fix</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/photography/index.html">Photography</a></li>
+        <li><a href="/other/index.html">Other</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="muos rg35xx plus screen issue fix">MuOS RG35XX Plus Screen Issue Fix</h1>
+</div>
+</div>
+<div class="actual-content">
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#the-issue">
+				<span class="tocnumber">1</span>
+				<span class="toctext">The Issue</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#the-fix">
+				<span class="tocnumber">2</span>
+				<span class="toctext">The Fix</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#updated-windows-methods">
+				<span class="tocnumber">2.1</span>
+				<span class="toctext">Updated Windows Methods</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#linux-version">
+				<span class="tocnumber">2.2</span>
+				<span class="toctext">Linux Version</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#text-to-replace">
+				<span class="tocnumber">3</span>
+				<span class="toctext">Text to Replace</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=the-issue>The Issue</h2>
+<p>On the newer revisions of the RG35XX devices from Anbernic, MuOS Pixie has an issue with the screen timings, causing horizontal lines to appear on the bottom of the screen over time</p>
+
+<ul>
+<li><a href="https://ibb.co/1GxjqSCd" target="_self">Example 1</a>
+</li>
+<li><a href="https://www.reddit.com/media?url=https%3A%2F%2Fpreview.redd.it%2F504177hj16ke1.jpg%3Fwidth%3D320%26crop%3Dsmart%26auto%3Dwebp%26s%3D4af0907a67bf38dfc6977cd23dad085c68181c36" target="_self">Example 2</a>
+</li>
+</ul>
+
+<p>The issue is more noticeable on high brightness levels, and gets worse the longer the device is used for<br>
+It seems to occur on panel with the model number 355608-A9</p>
+<h2 id=the-fix>The Fix</h2>
+
+<ul>
+<li>DISCLAIMERS:
+
+<ul>
+<li>I have only tested this on the RG35XX Plus</li>
+<li>I make no guarantees that this guide works</li>
+<li>Editing these files can potentially damage the screen</li>
+<li>If you enter commands incorrectly, you could overwrite the wrong drive</li>
+<li>Or possibly corrupt your MuOS install
+
+<ul>
+<li>I recommend backing it up with <code>dd</code> first (<code>sudo dd if=/dev/sdX bs=1M status=progress of=backup.iso</code>)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<p>The fix is to change the screen timings. By default MuOS sets the screen refresh rate to 59.98Hz. This guide changes that to match Knulli, which runs the screen at 59.94Hz. In theory this introduces more stutter, but it is unlikely to be noticeable.</p>
+<h3 id=updated-windows-methods>Updated Windows Methods</h3>
+
+<p>GitHub user andromalandro made a program to apply the patch on a Windows machine: <a href="https://github.com/andromalandro/FexFlasher" target="_self">https://github.com/andromalandro/FexFlasher</a>
+</p>
+<h3 id=linux-version>Linux Version</h3>
+
+<ol>
+<li>Take the SD card out of the handheld and put in in your computer</li>
+<li>Mount <code>/dev/sdX5</code> where X is the device letter of the SD card</li>
+<li>Backup the folder <code>mountPoint/opt/muos/device/rg35xx-plus/package/</code> (replace <code>rg35xx-plus</code> with your device)</li>
+<li>Navigate to <code>mountPoint/opt/muos/device/rg35xx-plus/package/</code> (replace <code>rg35xx-plus</code> with your device)</li>
+<li>Open the <code>sunxi.dts</code> file in a text editor, and find the section labelled <code>lcd0@01c0c000</code></li>
+<li>Replace that entire section (from the opening <code>{</code> to the closing <code>}</code>) with the text from the section below</li>
+<li>Save and exit the file</li>
+<li>Run <code>dtc -I dts -O dtb -o sunxi.fex sunxi.dts</code></li>
+<li>Run <code>~/Downloads/dragonsecboot -pack boot_package.cfg</code><br>
+9.1. This program can be found here: <a href="https://github.com/MustardOS/tool/blob/main/dragonsecboot" target="_self">https://github.com/MustardOS/tool/blob/main/dragonsecboot</a>
+<br>
+9.2. Download this file and make it executable with <code>chmod +x dragonsecboot</code><br>
+</li>
+<li>Copy the <code>boot_package.fex</code> file to another place on your computer (<code>~/Downloads</code> for example)</li>
+<li>Unmount the SD card, but leave in computer (<code>cd ~</code>, <code>sudo umount /dev/sdX5</code>)</li>
+<li>Run <code>sudo dd if=boot_package.fex of=/dev/sdX bs=1k seek=16400</code>
+
+<ul>
+<li>IMPORTANT: Make sure you ge the right <code>sdX</code> device</li>
+<li>IMPORTANT: Make sure you enter the correct seek offset <code>16400</code></li>
+</ul></li>
+<li>Remove the SD card, place back in device and boot it up</li>
+</ol>
+<h2 id=text-to-replace>Text to Replace</h2>
+
+<p><a href="https://gist.github.com/randomcoder67/c0660e56337ab3d935810c310be31324" target="_self">On GitHub</a>
+<br>
+Copy this text:</p>
+
+<pre><code>		lcd0@01c0c000 {
+			compatible = &quot;allwinner,sunxi-lcd0&quot;;
+			pinctrl-names = &quot;active&quot;, &quot;sleep&quot;;
+			status = &quot;okay&quot;;
+			lcd_used = &lt;0x01&gt;;
+			lcd_driver_name = &quot;fog_fj035fhd05_v1&quot;;
+			lcd_backlight = &lt;0x32&gt;;
+			lcd_if = &lt;0x00&gt;;
+			lcd_hv_if = &lt;0x00&gt;;
+			lcd_x = &lt;0x280&gt;;
+			lcd_y = &lt;0x1e0&gt;;
+			lcd_width = &lt;0x96&gt;;
+			lcd_height = &lt;0x5e&gt;;
+			lcd_dclk_freq = &lt;0x18&gt;;
+			lcd_pwm_used = &lt;0x01&gt;;
+			lcd_pwm_ch = &lt;0x00&gt;;
+			lcd_pwm_freq = &lt;0xc350&gt;;
+			lcd_pwm_pol = &lt;0x01&gt;;
+			lcd_pwm_max_limit = &lt;0xff&gt;;
+			lcd_hbp = &lt;0x2e&gt;;
+			lcd_ht = &lt;0x302&gt;;
+			lcd_hspw = &lt;0x14&gt;;
+			lcd_vbp = &lt;0x0f&gt;;
+			lcd_vt = &lt;0x208&gt;;
+			lcd_vspw = &lt;0x04&gt;;
+			lcd_lvds_if = &lt;0x00&gt;;
+			lcd_lvds_colordepth = &lt;0x00&gt;;
+			lcd_lvds_mode = &lt;0x00&gt;;
+			lcd_frm = &lt;0x01&gt;;
+			lcd_hv_clk_phase = &lt;0x02&gt;;
+			lcd_hv_sync_polarity = &lt;0x03&gt;;
+			lcd_gamma_en = &lt;0x00&gt;;
+			lcd_bright_curve_en = &lt;0x00&gt;;
+			lcd_cmap_en = &lt;0x00&gt;;
+			deu_mode = &lt;0x00&gt;;
+			lcdgamma4iep = &lt;0x16&gt;;
+			smart_color = &lt;0x5a&gt;;
+			lcd_pin_power;
+			lcd_power;
+			lcd_bl_en;
+			lcd_gpio_0 = &lt;0x4b 0x08 0x09 0x01 0xffffffff 0xffffffff 0x01&gt;;
+			lcd_gpio_1 = &lt;0x4b 0x08 0x0a 0x01 0xffffffff 0xffffffff 0x01&gt;;
+			lcd_gpio_2 = &lt;0x4b 0x08 0x08 0x01 0xffffffff 0xffffffff 0x01&gt;;
+			lcd_gpio_3 = &lt;0x4b 0x08 0x0e 0x01 0xffffffff 0xffffffff 0x01&gt;;
+			lcd_gpio_4 = &lt;0x4b 0x08 0x0f 0x01 0xffffffff 0xffffffff 0x01&gt;;
+			pinctrl-0 = &lt;0xa2&gt;;
+			pinctrl-1 = &lt;0xa3&gt;;
+			linux,phandle = &lt;0x164&gt;;
+			phandle = &lt;0x164&gt;;
+		};
+</code></pre>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>

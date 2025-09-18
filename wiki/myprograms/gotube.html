@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+<title>GoTube Terminal YouTube Client</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/photography/index.html">Photography</a></li>
+        <li><a href="/other/index.html">Other</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="gotube terminal youtube client">GoTube Terminal YouTube Client</h1>
+</div>
+</div>
+<div class="actual-content">
+<table class="infobox">
+<caption>GoTube</caption>
+<tbody>
+<tr>
+<td class="image_caption" colspan="2">
+<img alt="GoTube Example Search" src="/images/gotube.png" width="1054" width="583">
+<div>GoTube Example Search</div>
+</td>
+</tr>
+<tr>
+<td class="item">Creater</td>
+<td>randomcoder67</td>
+</tr>
+<tr>
+<td class="item">GitHub Link</td>
+<td><a href="https://github.com/randomcoder67/GoTube-Terminal-YouTube">GoTube Repo</a></td>
+</tr>
+<tr>
+<td class="item">Language</td>
+<td>Golang</td>
+</tr>
+<tr>
+<td class="item">Version</td>
+<td>Beta 0.2.0</td>
+</tr>
+<tr>
+<td class="item">Category</td>
+<td>TUI Application</td>
+</tr>
+</tbody>
+</table>
+<p>GoTube is a terminal YouTube client, designed to emulate as much of the browser YouTube experience as possible, without the slow website, and without the ads. Similarly to <a href="https://github.com/yt-dlp/yt-dlp" target="_self">yt-dlp</a>
+, GoTube makes use of the saved browser cookies to allow access to account features. This means that creating an API key and going through the OAuth process is not necessary, and also allows GoTube access to certain functions that the official API does not have, such as viewing and editing your Watch Later playing, and saving video watch times to your history.</p>
+
+<p>GoTube was designed to be used side by side with browser YouTube, or the mobile app. For this reason, GoTube operates on real YouTube playlists, instead of locally saved playlists, and is capabale of both resuming videos from their previous watch point, and saving a videos watch time to your history, allowing you to pick up on another PC, or on mobile.</p>
+
+<p><a href="https://github.com/ueber-devel/ueberzug" target="_self">Ueberzug</a>
+ is used to allow thumbnails to be rendered in any* terminal emulator, with the main display mode emulating the YouTube grid interface.</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#design">
+				<span class="tocnumber">1</span>
+				<span class="toctext">Design</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#usage">
+				<span class="tocnumber">2</span>
+				<span class="toctext">Usage</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#how-it-works">
+				<span class="tocnumber">3</span>
+				<span class="toctext">How it Works</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#cookies">
+				<span class="tocnumber">3.1</span>
+				<span class="toctext">Cookies</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#sapisidhash">
+				<span class="tocnumber">3.2</span>
+				<span class="toctext">SAPISIDHASH</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#syncing-video-watchtime">
+				<span class="tocnumber">3.3</span>
+				<span class="toctext">Syncing Video Watchtime</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#ueberzug">
+				<span class="tocnumber">3.4</span>
+				<span class="toctext">Ueberzug</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#internal-logic">
+				<span class="tocnumber">3.5</span>
+				<span class="toctext">Internal Logic</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=design>Design</h2>
+
+<p>GoTube does not use the <a href="https://developers.google.com/youtube/v3" target="_self">official YouTube API</a>
+, instead using the website API, through use of browser cookies. There are two main parts to this:</p>
+
+<ol>
+<li>The browser cookies - The relevant data is extracted from Firefox cookies to retrieve YouTube webpages. This means that the subscription feed will be accurate for the users account, searches will be saved, recommendations will be accurate etc.</li>
+<li>The "SAPISIDHASH". This is a code used in API calls made by YouTube. It is a combination of data from a specific cookie, as well as the current <a href="https://en.wikipedia.org/wiki/Unix_time" target="_self">Unix timestamp</a>
+, hashed with the <a href="https://en.wikipedia.org/wiki/SHA-1" target="_self">SHA1</a>
+ algorithm. This code allows interacting with a user's account features, such as creating and deleting playlists, adding items to playlists etc</li>
+</ol>
+
+<p>The TUI interface for GoTube is written using <a href="https://github.com/gdamore/tcell" target="_self">Tcell V2</a>
+, a low level Golang TUI library. Ueberzug is used to display images.</p>
+<h2 id=usage>Usage</h2>
+
+<p>In order to use GoTube, you must be logged into YouTube in Firefox.</p>
+
+<p>The TUI can be navigated using the arrow keys or vim keys.</p>
+<h2 id=how-it-works>How it Works</h2>
+<h3 id=cookies>Cookies</h3>
+<h3 id=sapisidhash>SAPISIDHASH</h3>
+<h3 id=syncing-video-watchtime>Syncing Video Watchtime</h3>
+<h3 id=ueberzug>Ueberzug</h3>
+<h3 id=internal-logic>Internal Logic</h3>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+<title>mpv</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/photography/index.html">Photography</a></li>
+        <li><a href="/other/index.html">Other</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="mpv">mpv</h1>
+</div>
+</div>
+<div class="actual-content">
+<table class="infobox">
+<caption>mpv</caption>
+<tbody>
+<tr>
+<td class="image_caption" colspan="2">
+<img alt="A YouTube video playing in mpv" src="/images/programScreenshots/mpv-example.png" width="898" width="534">
+<div>A YouTube video playing in mpv</div>
+</td>
+</tr>
+<tr>
+<td class="item">Website</td>
+<td><a href="https://mpv.io/">mpv.io</a></td>
+</tr>
+<tr>
+<td class="item">GitHub</td>
+<td><a href="https://github.com/mpv-player/mpv/">mpv GitHub</a></td>
+</tr>
+<tr>
+<td class="item">Language</td>
+<td>C (configured in Lua)</td>
+</tr>
+<tr>
+<td class="item">Category</td>
+<td>Media Player</td>
+</tr>
+</tbody>
+</table>
+<p>mpv is a media player, designed to be configured from the command line instead of via a GUI interface. An mpv window only contains the video, and the "OSC" (on screen controller), there are no menus for loading videos, or changing settings.</p>
+
+<p>mpv can play video and audio, either from local files or from network streams. It includes integration with <code>yt-dlp</code>, to allow playback of YouTube videos.</p>
+
+<p>As mpv is highly configurable, it is often used in scripts, for example a simple music player can be made by mapping a hotkey to <code>mpv ~/Music/somePlaylist</code>. Unix sockets can be used to communicate with a running mpv instance, allowing control of the playback without focusing the window (you need not even have a window open).</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#mpv.conf">
+				<span class="tocnumber">1</span>
+				<span class="toctext">mpv.conf</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#input.conf">
+				<span class="tocnumber">2</span>
+				<span class="toctext">input.conf</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#video-navigation">
+				<span class="tocnumber">2.1</span>
+				<span class="toctext">Video Navigation</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#speed">
+				<span class="tocnumber">2.2</span>
+				<span class="toctext">Speed</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#other">
+				<span class="tocnumber">2.3</span>
+				<span class="toctext">Other</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=mpv-conf>mpv.conf</h2>
+
+<p><code>~/.config/mpv/mpv.conf</code> is used for general configuration. Details about some useful/interesting options are listed below:</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th align="center">Setting</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Enabled hardware decode for Intel GPUs</td>
+<td align="center"><code>hwdec=vaapi</code></td>
+<td align="center">See: <a href="https://en.wikipedia.org/wiki/Intel_Quick_Sync_Video" target="_self">Intel Quick Sync Video Wikipedia</a>
+ for details about codec support</td>
+</tr>
+
+<tr>
+<td align="center">Set Default Window Size to 30%</td>
+<td align="center"><code>geometry=30%</code></td>
+<td align="center">By default videos will open at their true size. This makes them smaller so they don't take over the entire screen</td>
+</tr>
+
+<tr>
+<td align="center">Save Video Progress</td>
+<td align="center"><code>save-position-on-quit</code></td>
+<td align="center">Video will reopen at the point you left off (unless <code>--no-resume-playback</code> used)</td>
+</tr>
+
+<tr>
+<td align="center">Set Screenshot Directory</td>
+<td align="center"><code>screenshot-directory=~/Pictures/mpv</code></td>
+<td align="center">Uses <code>~/Pictures/mpv</code></td>
+</tr>
+
+<tr>
+<td align="center">Always Open Window</td>
+<td align="center"><code>force-window=yes</code></td>
+<td align="center">Causes a blank window to open when file without video is played (e.g. audio file with no album art)</td>
+</tr>
+
+<tr>
+<td align="center">Fix Issue With Video/Audio Desync</td>
+<td align="center"><code>hr-seek=yes</code></td>
+<td align="center">Fixes an issue when playing video and audio from different network streams (e.g. most YouTube formats), where rewinding will cause audio desync and video speedup</td>
+</tr>
+
+<tr>
+<td align="center">Set Max Cache</td>
+<td align="center"><code>demuxer-max-bytes=50MiB</code></td>
+<td align="center">Limits the cache to 50 MiB</td>
+</tr>
+
+<tr>
+<td align="center">Set Max Rewind Cache</td>
+<td align="center"><code>demuxer-max-back-bytes=20MiB</code></td>
+<td align="center">Limits the rewind cache to 20 MiB</td>
+</tr>
+
+<tr>
+<td align="center">Turn Default OSC Off</td>
+<td align="center"><code>osc=no</code></td>
+<td align="center">Removes default OSC as I use osc-tethys</td>
+</tr>
+
+<tr>
+<td align="center">Enable Border</td>
+<td align="center"><code>border=yes</code></td>
+<td align="center">Ensures the window manager borders are used</td>
+</tr>
+
+<tr>
+<td align="center">Set OSC Font</td>
+<td align="center"><code>osc-font=Roboto</code></td>
+<td align="center">Uses Roboto</td>
+</tr>
+
+<tr>
+<td align="center">Set OSC Font Size</td>
+<td align="center"><code>osc-font-size=35</code></td>
+<td align="center">Uses font size 35</td>
+</tr>
+
+<tr>
+<td align="center">Turn Auto Window Resize Off</td>
+<td align="center"><code>auto-window-resize=no</code></td>
+<td align="center">Honestly can't remember what this does</td>
+</tr>
+
+<tr>
+<td align="center">Turn OSD Scale Off (1)</td>
+<td align="center"><code>script-opts=osc-vidscale=no</code></td>
+<td align="center">Stops (mainly) the scaling of the OSC depending on window size</td>
+</tr>
+
+<tr>
+<td align="center">Turn OSD Scale Off (2)</td>
+<td align="center"><code>osd-scale-by-window=no</code></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>[AudioFiles]
+profile-cond = (filename:match"%.mp3<span class="math inline">\(&quot; or filename:match&quot;%.m4a\)</span>") ~= nil
+#title='<span class="math inline">\({metadata/title} - \)</span>{metadata/artist}'
+geometry=25%
+#<tempo|pitch|both|none></p>
+
+<p>[extension.vpy]
+demuxer-lavf-format=vapoursynth</p>
+<h2 id=input-conf>input.conf</h2>
+
+<p><code>~/.config/mpv/input.conf</code> is used to set keybinds for mpv. My keybinds are listed below (not all of these are in <code>input.conf</code>, as some are the default):</p>
+<h3 id=video-navigation>Video Navigation</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th align="center">Shortcut</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Pause/Play</td>
+<td align="center"><code>Space</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Skip 5 Seconds</td>
+<td align="center"><code>Right</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Rewind 5 Seconds</td>
+<td align="center"><code>Left</code></td>
+<td align="center">Use negative number to rewind (<code>seek -5</code>)</td>
+</tr>
+
+<tr>
+<td align="center">Skip 30 Seconds</td>
+<td align="center"><code>Up</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Rewind 30 Seconds</td>
+<td align="center"><code>Down</code></td>
+<td align="center"><code>seek -30</code> is used to rewind</td>
+</tr>
+
+<tr>
+<td align="center">Next Chapter</td>
+<td align="center"><code>Shift + Right</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Previous Chapter</td>
+<td align="center"><code>Shift + Left</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Next Video</td>
+<td align="center"><code>Enter</code> or <code>Shift + n</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Previous Video</td>
+<td align="center"><code>Shift + Enter</code> or <code>Shift + p</code></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id=speed>Speed</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th align="center">Shortcut</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Increase speed by <code>0.1</code></td>
+<td align="center"><code>s</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Decrease speed by <code>0.1</code></td>
+<td align="center"><code>d</code></td>
+<td align="center">Use negative number to decrease speed (<code>add speed -0.1</code>)</td>
+</tr>
+
+<tr>
+<td align="center">Reset Speed</td>
+<td align="center"><code>r</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Toggle Speed 1x and 2x</td>
+<td align="center"><code>g</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Show Current Speed</td>
+<td align="center"><code>x</code></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>The speed control keybinds are the same as <a href="https://addons.mozilla.org/en-GB/firefox/addon/videospeed/" target="_self">Video Speed Controller</a>
+, a popular addon to control HTML video playback</p>
+<h3 id=other>Other</h3>
+
+<table>
+<thead>
+<tr>
+<th align="center">Function</th>
+<th align="center">Shortcut</th>
+<th align="center">Explanation</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">Screenshot</td>
+<td align="center"><code>Shift + s</code></td>
+<td align="center">Saves to <code>~/Pictures/mpv</code></td>
+</tr>
+
+<tr>
+<td align="center">Toggle Mute</td>
+<td align="center"><code>m</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Show Clock</td>
+<td align="center"><code>t</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Toggle Clock</td>
+<td align="center"><code>Shift + t</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Show Chapters</td>
+<td align="center"><code>c</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Show Playlist</td>
+<td align="center"><code>u</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Show Metadata</td>
+<td align="center"><code>Shift + m</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Show OSC</td>
+<td align="center"><code>/</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Toggle OSC</td>
+<td align="center"><code>Shift + /</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Toggle Mono Audio</td>
+<td align="center"><code>Shift + v</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Rotate Video 90°</td>
+<td align="center"><code>Shift + r</code></td>
+<td align="center"></td>
+</tr>
+
+<tr>
+<td align="center">Set Geometry 60%</td>
+<td align="center"><code>Shift + f</code></td>
+<td align="center">"Half Fullscreen"</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>

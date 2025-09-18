@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+<title>Minecraft 1.21.1 Setup - Vanilla Plus</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/photography/index.html">Photography</a></li>
+        <li><a href="/other/index.html">Other</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="minecraft 1.21.1 setup - vanilla plus">Minecraft 1.21.1 Setup - Vanilla Plus</h1>
+</div>
+</div>
+<div class="actual-content">
+<p>I wanted to get back into Minecraft, so I have attemped to put together a modpack/setup that fine tunes the default experience, as well as fixing some issues I have.<br>
+Below is a list of all the mods, data packs and resource packs.</p>
+
+<p>The changes I made are partially inspired by <a href="https://www.youtube.com/@Whitelight" target="_self">Whitelight's</a>
+ recent Minecraft critique, I highly recommend watching it: <a href="https://www.youtube.com/watch?v=_KqeLT-EOe0" target="_self">Another Serious Critique of Minecraft - Whitelight</a>
+</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#"rules-of-play"">
+				<span class="tocnumber">1</span>
+				<span class="toctext">"Rules of Play"</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#install-instructions">
+				<span class="tocnumber">2</span>
+				<span class="toctext">Install Instructions</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#launcher">
+				<span class="tocnumber">3</span>
+				<span class="toctext">Launcher</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#mods">
+				<span class="tocnumber">4</span>
+				<span class="toctext">Mods</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#performance">
+				<span class="tocnumber">4.1</span>
+				<span class="toctext">Performance</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#graphics">
+				<span class="tocnumber">4.2</span>
+				<span class="toctext">Graphics</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#audio">
+				<span class="tocnumber">4.3</span>
+				<span class="toctext">Audio</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#ui">
+				<span class="tocnumber">4.4</span>
+				<span class="toctext">UI</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#inventory">
+				<span class="tocnumber">4.5</span>
+				<span class="toctext">Inventory</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#utility">
+				<span class="tocnumber">4.6</span>
+				<span class="toctext">Utility</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#mobs">
+				<span class="tocnumber">4.7</span>
+				<span class="toctext">Mobs</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#world-generation">
+				<span class="tocnumber">4.8</span>
+				<span class="toctext">World Generation</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#gameplay">
+				<span class="tocnumber">4.9</span>
+				<span class="toctext">Gameplay</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#dependancies">
+				<span class="tocnumber">4.10</span>
+				<span class="toctext">Dependancies</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#datapacks">
+				<span class="tocnumber">5</span>
+				<span class="toctext">Datapacks</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#my-modified-datapacks">
+				<span class="tocnumber">5.1</span>
+				<span class="toctext">My/Modified Datapacks</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#vanilla-tweaks">
+				<span class="tocnumber">5.2</span>
+				<span class="toctext">Vanilla Tweaks</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#convenience">
+				<span class="tocnumber">5.2.1</span>
+				<span class="toctext">Convenience</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#informative">
+				<span class="tocnumber">5.2.2</span>
+				<span class="toctext">Informative</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#resource-packs">
+				<span class="tocnumber">6</span>
+				<span class="toctext">Resource Packs</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#vanilla-tweaks">
+				<span class="tocnumber">6.1</span>
+				<span class="toctext">Vanilla Tweaks</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#aesthetic">
+				<span class="tocnumber">6.1.1</span>
+				<span class="toctext">Aesthetic</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#utility">
+				<span class="tocnumber">6.1.2</span>
+				<span class="toctext">Utility</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#gui">
+				<span class="tocnumber">6.1.3</span>
+				<span class="toctext">GUI</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#retro">
+				<span class="tocnumber">6.1.4</span>
+				<span class="toctext">Retro</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#fun">
+				<span class="tocnumber">6.1.5</span>
+				<span class="toctext">Fun</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#fixes">
+				<span class="tocnumber">6.1.6</span>
+				<span class="toctext">Fixes</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#shaders">
+				<span class="tocnumber">7</span>
+				<span class="toctext">Shaders</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#other">
+				<span class="tocnumber">8</span>
+				<span class="toctext">Other</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#extra">
+				<span class="tocnumber">9</span>
+				<span class="toctext">Extra</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=rules-of-play>"Rules of Play"</h2>
+
+<p>There are some parts of modern Minecraft that I think are detrimental to the experience if the player overuses them. For this reason I created a loose set of rules for myself to follow during a playthrough.</p>
+
+<ol>
+<li>Don't abuse villager mechanics
+
+<ul>
+<li>Try to avoid spending hours settings up perfect villager trading halls, as this bypasses a lot of the challenge in the game</li>
+</ul></li>
+<li>Don't abuse beds
+
+<ul>
+<li>Not allowed to use beds on the first few nights</li>
+<li>Try to work/do things outside at night, don't just sleep at 18:32 every night</li>
+<li>Phantoms are disabled using a gamerule to encourage this</li>
+</ul></li>
+<li>Don't spend all the time making automated farms
+
+<ul>
+<li>Try and get resources the indended way, at least for the early and mid game</li>
+<li>If you want to make farms, make the less overpowered types (Guardian farm instead of Enderman farm etc)</li>
+</ul></li>
+<li>Don't overuse/rush to Elytra
+
+<ul>
+<li>Try and use some of the other movement mechanics in the game, at least in the early and mid game</li>
+<li>For example Horses and Minecarts (especially with the Linkart mod) are still very useful modes of transport</li>
+<li>Consider only using Elytra as it was originally indended, as a glider (i.e. not using fireworks)</li>
+</ul></li>
+</ol>
+<h2 id=install-instructions>Install Instructions</h2>
+
+<p>Install fabric modloader for 1.21.1<br>
+Download linked mods and place them in <code>~/.minecraft/mods</code><br>
+Download linked data packs and add them when creating a new world in Minecraft itself<br>
+Download linked resource packs and place them in <code>~/.minecraft/resourcepacks</code>, then activate them inside the game.</p>
+<h2 id=launcher>Launcher</h2>
+
+<p>The default Minecraft launcher is not great, it's very slow and it's difficult to use modern and old version at the same time.<br>
+<a href="https://multimc.org/" target="_self">MultiMC</a>
+ is a good alternative launcher. It is avalible for Linux (<a href="https://github.com/MultiMC/multimc-pkgbuild" target="_self">Arch PKGBUILD</a>
+), and has been around for eons.</p>
+<h2 id=mods>Mods</h2>
+<h3 id=performance>Performance</h3>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/better-beds" target="_self">Better Beds</a>
+ - Fewer block entities</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/dynamic-fps" target="_self">Dynamic FPS</a>
+ - Background FPS limit</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/enhanced-block-entities" target="_self">Enhanced Block Entities</a>
+ - Less chest lag</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/dynamic-fps" target="_self">Entity Culling</a>
+ - Less mob lag</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/ferritecore-fabric" target="_self">Ferrite Core</a>
+ - Less RAM usage</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/immediatelyfast" target="_self">ImmediatelyFast</a>
+ - More FPS</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/not-enough-crashes" target="_self">Not Enough Crashes</a>
+ - Better crash handling</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/lithium" target="_self">Lithium</a>
+ - Tick optimisation</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/sodium" target="_self">Sodium</a>
+ - FPS optimisation</li>
+<li><a href="https://modrinth.com/mod/c2me-fabric" target="_self">Concurrent Chink Management Engine</a>
+ - Better chunk loading</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/cull-less-leaves" target="_self">Cull Less Leaves</a>
+ - Cull leaves but not ugly</li>
+</ul>
+<h3 id=graphics>Graphics</h3>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/irisshaders" target="_self">Iris Shaders</a>
+ - Alternative to Optifine for shaders</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/continuity" target="_self">Continuity</a>
+ - Connected textures</li>
+<li><a href="https://modrinth.com/mod/fallingleaves" target="_self">Falling Leaves</a>
+ - Adds leaves that fall from trees</li>
+<li><a href="https://modrinth.com/mod/visuality" target="_self">Visuality</a>
+ - A bunch of little effects</li>
+<li><a href="https://modrinth.com/mod/better-clouds" target="_self">Better Clouds</a>
+</li>
+<li><a href="https://modrinth.com/mod/distanthorizons" target="_self">Distant Horizons</a>
+ - LOD mod, enables much longer render distance</li>
+<li><a href="https://modrinth.com/mod/particle-rain/" target="_self">Particle Rain</a>
+ - Pretty weather effects</li>
+</ul>
+<h3 id=audio>Audio</h3>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/ambientsounds" target="_self">AmbientSounds 6</a>
+ - Ambience</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/sound-physics-remastered" target="_self">Sound Physics Remastered</a>
+ - Realistic sounds</li>
+<li><a href="https://modrinth.com/mod/charmonium" target="_self">Charmonium</a>
+ - AmbientSounds 6 alternative, only install one</li>
+<li><a href="https://modrinth.com/mod/extrasounds" target="_self">ExtraSounds</a>
+ - UI sounds</li>
+<li><a href="https://modrinth.com/mod/auditory-continued" target="_self">Auditory Continued</a>
+ - Better block sounds</li>
+<li><a href="https://modrinth.com/mod/coolrain" target="_self">Cool Rain</a>
+ - Realistic rain sounds based on blocks</li>
+</ul>
+<h3 id=ui>UI</h3>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/obscure-tooltips" target="_self">Obscure Tooltips</a>
+ - Fancy tooltips</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/loot-journal-fabric" target="_self">Loot Journal</a>
+ - Shows items your pick up</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/status-effect-bars" target="_self">Status Effect Bars</a>
+ - Duration bars</li>
+<li><a href="https://modrinth.com/mod/betterf3" target="_self">Better F3</a>
+ - Nicer looking and customisable F3 menu</li>
+<li><a href="https://modrinth.com/mod/better-stats" target="_self">Better Statistics Screen</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/leave-my-bars-alone" target="_self">Leave My Bars Alone</a>
+ - Prevent horse GUI from removing defualt GUI</li>
+<li><a href="https://modrinth.com/mod/detail-armor-bar" target="_self">Detail Armor Bar</a>
+</li>
+</ul>
+<h3 id=inventory>Inventory</h3>
+
+<ul>
+<li><a href="https://modrinth.com/plugin/itemswapper" target="_self">ItemSwapper</a>
+ - Easy swapping of related items</li>
+</ul>
+<h3 id=utility>Utility</h3>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/modmenu" target="_self">Mod Menu</a>
+ - A configuration menu for mods</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/debugify" target="_self">Debugify</a>
+ - Lots of bug fixes</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/dont-clear-chat-history" target="_self">Don't Clear Chat History</a>
+ - Keep chat history between world loads</li>
+<li><a href="https://modrinth.com/mod/replaymod" target="_self">Replay Mod</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/logical-zoom" target="_self">Logical Zoom</a>
+ - Zoom</li>
+<li><a href="https://modrinth.com/mod/debugify" target="_self">Debugify</a>
+ - Fixes a bunch of bugs</li>
+<li><a href="https://modrinth.com/mod/carpet" target="_self">Carpet</a>
+ - Technical Minecraft improvements</li>
+<li><a href="https://modrinth.com/mod/fabrishot" target="_self">Fabrishot</a>
+ - Large screenshots</li>
+<li><a href="https://modrinth.com/mod/screenshot-viewer" target="_self">Screenshot Viewer</a>
+</li>
+<li><a href="https://modrinth.com/mod/dcwa" target="_self">Disable Custom World's Advice</a>
+</li>
+<li><a href="https://modrinth.com/mod/resource-pack-overrides" target="_self">Resource Pack Overrides</a>
+</li>
+</ul>
+<h3 id=mobs>Mobs</h3>
+
+<ul>
+<li><a href="https://modrinth.com/mod/more-mob-variants" target="_self">More Mob Variants</a>
+</li>
+<li><a href="https://modrinth.com/mod/villager-names-serilum" target="_self">Villager Names</a>
+</li>
+<li><a href="https://modrinth.com/mod/villagerconfig" target="_self">VillagerConfig</a>
+ - Allows customising villager trades via datapacks - see datapack section below for custom trades datapack</li>
+</ul>
+<h3 id=world-generation>World Generation</h3>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/geophilic" target="_self">Geophilic</a>
+ - Subtle additions to biomes</li>
+<li><a href="https://modrinth.com/mod/mes-moogs-end-structures/gallery" target="_self">MES - Moog's End Structures</a>
+ - Lots of structure for the End</li>
+</ul>
+<h3 id=gameplay>Gameplay</h3>
+
+<ul>
+<li><a href="https://modrinth.com/mod/goated" target="_self">You've Goat to be Kidding Me</a>
+ - Main feature: Ram Block, redstone component that can break blocks</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/immersive-aircraft" target="_self">Immersive Aircraft</a>
+</li>
+<li><a href="https://modrinth.com/mod/exposure" target="_self">Exposure</a>
+ - Realistic film camera mod - not currently updated for 1.21.1</li>
+<li><a href="https://github.com/Flatkat/Linkart-Refabricated?tab=readme-ov-file" target="_self">Linkart Refabricated</a>
+ - Minecart linking</li>
+<li><a href="https://modrinth.com/mod/trample-no-more" target="_self">Trample No More</a>
+ - Crops won't be trampled when wearing leather or Feather Falling boots</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/advancement-frames" target="_self">Advancement Frames</a>
+ - Frames to display your advancements</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/map-atlases" target="_self">Map Atlases</a>
+ - Not updated to 1.21.1</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/sword-blocking-mechanics" target="_self">Sword Blocking Mechanics</a>
+ - Brings back sword blocking, imo shields are overpowered</li>
+</ul>
+<h3 id=dependancies>Dependancies</h3>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/architectury-api" target="_self">Architectury API</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/bookshelf" target="_self">Bookshelf</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/cloth-config" target="_self">Cloth Config API</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/creativecore" target="_self">CreativeCore</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/collective" target="_self">Collective</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/fabric-api" target="_self">Fabric API</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/forge-config-api-port-fabric" target="_self">Forge Config API Port</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/selene" target="_self">Moonlight Lib</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/prickle" target="_self">Prickle Fabric</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/mc-mods/puzzles-lib" target="_self">Puzzles Lib</a>
+</li>
+<li><a href="https://modrinth.com/mod/tcdcommons" target="_self">TCDCommons API</a>
+</li>
+<li><a href="https://modrinth.com/mod/yacl" target="_self">YetAnotherConfigLib</a>
+</li>
+</ul>
+<h2 id=datapacks>Datapacks</h2>
+<h3 id=my-modified-datapacks>My/Modified Datapacks</h3>
+
+<ul>
+<li><p><a href="https://github.com/randomcoder67/Minecraft-Tweaks-1.21.1" target="_self">My/Modified Datapacks</a>
+</p></li>
+
+<li><p>Includes changes to world generation (smaller "temperature regions")</p></li>
+
+<li><p>Changes to villager trading (inspired by the 1.20.2 experimental villager rebalance)</p></li>
+
+<li><p>More difficult firework rocket recipe (uses Dragon's Breath)</p></li>
+
+<li><p>Craftable bundle</p></li>
+
+<li><p>Also includes modified <a href="https://modrinth.com/datapack/survivors-elegy/" target="_self">Survivor's Elegy</a>
+ and <a href="https://modrinth.com/datapack/the-creepers-code/" target="_self">The Creeper's Code</a>
+, with only a few features</p></li>
+</ul>
+<h3 id=vanilla-tweaks>Vanilla Tweaks</h3>
+
+<ul>
+<li><a href="https://vanillatweaks.net/picker/datapacks/" target="_self">Vanilla Tweaks Datapacks</a>
+</li>
+</ul>
+<h4 id=convenience>Convenience</h4>
+
+<ul>
+<li>More Effective Tools - Gives some blocks proper tools to use</li>
+</ul>
+<h4 id=informative>Informative</h4>
+
+<ul>
+<li>Real Time Clock - Adds a clock which shows how long you have played in a world for in real time</li>
+<li>Coordinates HUD - Useful addition to HUD, had coordinates, facing direction and time</li>
+<li>Durability Ping - Stops you accidentally breaking tools</li>
+</ul>
+<h2 id=resource-packs>Resource Packs</h2>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/texture-packs/fancy-gui-overhaul" target="_self">Fancy: GUI Overhaul</a>
+</li>
+<li><a href="https://modrinth.com/resourcepack/cubic-sun-moon" target="_self">Cubic Sun & Moon</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/texture-packs/invisible-item-frames" target="_self">Invisible Item Frames</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/texture-packs/xalis-enchanted-books" target="_self">xali's Enchanted Books</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/texture-packs/xalis-potions" target="_self">xali's Potions</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/texture-packs/crops-3d" target="_self">Crops 3D</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/texture-packs/enhanced-boss-bars" target="_self">Enhanced Boss Bars</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/texture-packs/spawn-eggs-faces/gallery" target="_self">Spawn Egg Faces</a>
+</li>
+<li><a href="https://modrinth.com/resourcepack/simple-3d-chain" target="_self">Simple 3D Chain</a>
+</li>
+<li><a href="https://www.curseforge.com/minecraft/texture-packs/cybers-3d-amethyst" target="_self">Cyber's 3D Amethyst</a>
+</li>
+<li><a href="https://modrinth.com/resourcepack/better-lanterns" target="_self">Better Lanterns</a>
+</li>
+</ul>
+<h3 id=vanilla-tweaks-1>Vanilla Tweaks</h3>
+
+<ul>
+<li><a href="https://vanillatweaks.net/picker/resource-packs/" target="_self">Vanilla Tweaks Resource Packs</a>
+</li>
+</ul>
+<h4 id=aesthetic>Aesthetic</h4>
+
+<ul>
+<li>Colorful Enchanting Table Particles</li>
+<li>Warm Glow</li>
+<li>Flint Tipped Arrows</li>
+</ul>
+<h4 id=utility-1>Utility</h4>
+
+<ul>
+<li>Different Stems</li>
+</ul>
+<h4 id=gui>GUI</h4>
+
+<ul>
+<li>Ping Color Indicator</li>
+<li>Rainbow Experience Bar</li>
+<li>Classic Menu Panorama</li>
+</ul>
+<h4 id=retro>Retro</h4>
+
+<ul>
+<li>Old Door Sound</li>
+<li>Rename "Pottery Sherd" to "Pottery Shard"</li>
+<li>Old Level Up Sounds</li>
+</ul>
+<h4 id=fun>Fun</h4>
+
+<ul>
+<li>ilmango Golden Apples</li>
+</ul>
+<h4 id=fixes>Fixes</h4>
+
+<ul>
+<li>Item Stitching Fix</li>
+<li>Updated Observer Texture</li>
+<li>Updated Stat Icon Textures</li>
+<li>Updated Spectator Icon Textures</li>
+<li>Redstone Wire Fix</li>
+<li>Big Dripleaf Stem Fix</li>
+<li>Small Dripleaf Stem Fix</li>
+<li>Consistent Blank Decorated Pot</li>
+<li>Consistent Buckets</li>
+<li>Proper Break Particles</li>
+<li>Iron Bars Fix</li>
+<li>Hoe Fix</li>
+</ul>
+<h2 id=shaders>Shaders</h2>
+
+<ul>
+<li><a href="https://www.curseforge.com/minecraft/shaders/complementary-reimagined" target="_self">Complementary Shaders</a>
+ - Not used when playing normally</li>
+</ul>
+<h2 id=other>Other</h2>
+
+<ul>
+<li><code>doInsomnia</code> gamerule is set to false, as Phantoms attacking the player when they don't sleep only <em>encourages</em> overuse of beds. Also Phantoms just aren't fun</li>
+<li><code>doFireTick</code> gamerule is set to false, as fire destroying your wood builds is just annoying</li>
+</ul>
+<h2 id=extra>Extra</h2>
+
+<ul>
+<li><a href="https://unmined.net/" target="_self">https://unmined.net/</a>
+ - Mapping tool</li>
+<li><a href="https://modrinth.com/mod/oritech" target="_self">https://modrinth.com/mod/oritech</a>
+ - Tech mod, looks fun</li>
+</ul>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>

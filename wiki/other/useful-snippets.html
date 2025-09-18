@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+<title>Useful Snippets</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/photography/index.html">Photography</a></li>
+        <li><a href="/other/index.html">Other</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="useful snippets">Useful Snippets</h1>
+</div>
+</div>
+<div class="actual-content">
+<p>Most of these aren't mine, sourced where possible</p>
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#remove-duplicates-while-maintaining-order">
+				<span class="tocnumber">1</span>
+				<span class="toctext">Remove Duplicates While Maintaining Order</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#explanation">
+				<span class="tocnumber">1.1</span>
+				<span class="toctext">Explanation</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#firefox-fake-fullscreen-useful-for-tiling-wms">
+				<span class="tocnumber">2</span>
+				<span class="toctext">Firefox Fake Fullscreen - Useful For Tiling WMs</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#stress-test-usb-drive">
+				<span class="tocnumber">3</span>
+				<span class="toctext">Stress Test USB Drive</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#build-conky-with-lua-support">
+				<span class="tocnumber">4</span>
+				<span class="toctext">Build Conky with Lua Support</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#linux-samba-setup">
+				<span class="tocnumber">5</span>
+				<span class="toctext">Linux Samba Setup</span>
+			</a>
+	<ul>
+		<li>
+			<a href="#-etc-samba-smb.conf">
+				<span class="tocnumber">5.1</span>
+				<span class="toctext">/etc/samba/smb.conf</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul>
+		</li>
+		<li>
+			<a href="#edit--sys-...-brightness-file-without-sudo-password">
+				<span class="tocnumber">6</span>
+				<span class="toctext">Edit /sys/.../brightness File Without Sudo Password</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#access-mediawiki-api-sandbox">
+				<span class="tocnumber">7</span>
+				<span class="toctext">Access MediaWiki API Sandbox</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#search-the-whole-of-github">
+				<span class="tocnumber">8</span>
+				<span class="toctext">Search the Whole of GitHub</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=remove-duplicates-while-maintaining-order>Remove Duplicates While Maintaining Order</h2>
+
+<p><code>cat -n file_name | sort -uk2 | sort -n | cut -f2-</code></p>
+<h3 id=explanation>Explanation</h3>
+
+<ol>
+<li>Use <code>cat -n</code> to prepend line numbers</li>
+<li>Use <code>sort -u</code> remove duplicate data (<code>-k2</code> says 'start at field 2 for sort key')</li>
+<li>Use <code>sort -n</code> to sort by prepended number</li>
+<li>Use <code>cut</code> to remove the line numbering (<code>-f2-</code> says 'select field 2 till end')</li>
+</ol>
+
+<p><a href="https://stackoverflow.com/a/20639730" target="_self">Credit to Digital Trauma on StackOverflow</a>
+</p>
+<h2 id=firefox-fake-fullscreen-useful-for-tiling-wms>Firefox Fake Fullscreen - Useful For Tiling WMs</h2>
+
+<p>Firefox will not take up the entire screen when a video enters fullscreen, just the space of the Firefox window</p>
+
+<p>Go to <code>about:config</code> and set <code>full-screen-api.ignore-widgets</code> to <code>true</code></p>
+
+<p><a href="https://www.reddit.com/r/i3wm/comments/k2tszq/is_there_a_way_to_get_firefox_to_do_fullscreen/" target="_self">Credit to You_Yew_Ewe on reddit</a>
+</p>
+<h2 id=stress-test-usb-drive>Stress Test USB Drive</h2>
+
+<p><code>fio --name=usbseq --filename=test.test --size=1G --rw=readwrite --bs=1M --direct=1 --numjobs=1 --iodepth=16 --group_reporting --time_based --runtime=36000</code></p>
+<h2 id=build-conky-with-lua-support>Build Conky with Lua Support</h2>
+
+<ul>
+<li>Also makes it install to user <code>~/.local</code> directory</li>
+</ul>
+
+<p><code>cmake -S . -B build --fresh -DBUILD_X11=ON -DBUILD_WLAN=ON -DBUILD_LUA_CAIRO=ON -DBUILD_LUA_CAIRO_XLIB=ON -DCMAKE_INSTALL_PREFIX=&quot;$HOME/.local&quot;</code></p>
+<h2 id=linux-samba-setup>Linux Samba Setup</h2>
+
+<ul>
+<li>This example uses the apt package manager, so will work on Debian (including Raspbian) or Ubuntu</li>
+</ul>
+
+<ol>
+<li><code>sudo apt install samba samba-common-bin</code></li>
+<li><code>mkdir ~/Videos/shared</code></li>
+<li><code>sudo nano /etc/samba/smb.conf</code> - See below for file contents</li>
+<li><code>sudo smbpasswd -a &lt;username&gt;</code></li>
+<li><code>sudo systemctl restart smbd</code></li>
+</ol>
+<h3 id=etc-samba-smb-conf>/etc/samba/smb.conf</h3>
+
+<pre><code class="language-conf">[RaspberryPiSamba]
+path = /home/&lt;username&gt;/Videos/shared
+writeable = yes
+browseable = yes
+public = no
+</code></pre>
+
+<p><a href="https://pimylifeup.com/raspberry-pi-samba/" target="_self">Credit to Py My Life Up</a>
+</p>
+<h2 id=edit-sys-brightness-file-without-sudo-password>Edit /sys/.../brightness File Without Sudo Password</h2>
+
+<p><code>sudo visudo -f /etc/sudoers.d/brightness</code>
+<code>ALL ALL = (ALL) NOPASSWD: /usr/bin/tee /sys/class/backlight/intel_backlight/brightness</code></p>
+
+<p>Edit with:<br>
+<code>echo 200 | sudo /usr/bin/tee &quot;/sys/class/backlight/intel_backlight/brightness&quot;</code></p>
+
+<p><a href="https://forums.linuxmint.com/viewtopic.php?t=274060" target="_self">Linux Mint Forum Post</a>
+</p>
+<h2 id=access-mediawiki-api-sandbox>Access MediaWiki API Sandbox</h2>
+
+<p>Append:<br>
+<code>wiki/Special:ApiSandbox</code><br>
+To the end of the website URL</p>
+<h2 id=search-the-whole-of-github>Search the Whole of GitHub</h2>
+
+<p>Append:<br>
+/search?q=search_terms</p>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>

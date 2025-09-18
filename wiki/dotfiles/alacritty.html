@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+<title>Alacritty</title>
+</head>
+<body>
+<div class="page-wrapper">
+<div class="left-pane">
+     <div class="left-title">
+      <a href="/">Welcome To randomcoder67's Personal Website</a>
+     </div>
+     <div class="left-bar">
+      <ul>
+        <li><a href="/wiki/index.html">Wiki</a></li>
+        <li><a href="/blog/index.html">Blog</a></li>
+        <li><a href="/reviews/index.html">Reviews</a></li>
+        <li><a href="/projects/index.html">Projects</a></li>
+        <li><a href="/photography/index.html">Photography</a></li>
+        <li><a href="/other/index.html">Other</a></li>
+        <li><a href="/about.html">About</a></li>
+        <li><a href="/contributions.html">Contributions</a></li>
+        <li><a href="/about.html#contact">Contact</a></li>
+      </ul>
+     </div>
+     <div class="left-bar-two">
+      <ul>
+        <li><a href="https://github.com/randomcoder67">GitHub</a></li>
+        <li><a href="https://codeberg.org/randomcoder67">Codeberg</a></li>
+        <li><a href="">YouTube</a></li>
+        <li><a href="https://bsky.app/profile/randomcoder67.bsky.social">BlueSky</a></li>
+        <li><a href="">RSS</a></li>
+      </ul>
+     </div>
+    </div>
+<div class="main-content">
+<div class="center-div">
+<div class="hanging-sign">
+<h1 id="alacritty">Alacritty</h1>
+</div>
+</div>
+<div class="actual-content">
+<div id="toc" class="toc">
+	<div id="toctitle" class="toctitle">
+		<h2>Contents</h2>
+	</div>
+	<ul>
+		<li>
+			<a href="#font">
+				<span class="tocnumber">1</span>
+				<span class="toctext">Font</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#colour-scheme-theming">
+				<span class="tocnumber">2</span>
+				<span class="toctext">Colour Scheme/Theming</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+		<li>
+			<a href="#other">
+				<span class="tocnumber">3</span>
+				<span class="toctext">Other</span>
+			</a>
+	<ul>
+	</ul>
+		</li>
+	</ul></div>
+<h2 id=font>Font</h2>
+<p>I use Roboto Mono as a monospaced font.
+Relevant configuration in <code>alacritty.toml</code>:</p>
+
+<pre><code class="language-toml">[env]
+WINIT_X11_SCALE_FACTOR = &quot;2&quot;
+
+[font]
+size = 6
+
+[font.bold]
+family = &quot;Roboto Mono&quot;
+style = &quot;Bold&quot;
+
+[font.bold_italic]
+family = &quot;Roboto Mono&quot;
+style = &quot;Bold Italic&quot;
+
+[font.italic]
+family = &quot;Roboto Mono&quot;
+style = &quot;Italic&quot;
+
+[font.normal]
+family = &quot;Roboto Mono&quot;
+style = &quot;Regular&quot;
+</code></pre>
+
+<p>The <code>WINIT_X11_SCALE_FACTOR = &quot;2&quot;</code> line is used because my laptop has a high DPI display. If you have a 1080p screen or lower, you will likely want to change this to <code>&quot;1&quot;</code>, and adjust the font size accordingly.</p>
+<h2 id=colour-scheme-theming>Colour Scheme/Theming</h2>
+
+<p>I use a slightly modified version of Dracula. Only line of significant note below is the cursor style, whichis set to a "Beam" instead of the default block.</p>
+
+<pre><code class="language-toml">[colors.bright]
+black = &quot;#7a71aa&quot;
+blue = &quot;#bd93f9&quot;
+cyan = &quot;#8be9fd&quot;
+green = &quot;#50fa7b&quot;
+magenta = &quot;#ff79d2&quot;
+red = &quot;#ff5555&quot;
+white = &quot;#f8f8f2&quot;
+yellow = &quot;#f1fa8c&quot;
+
+[colors.cursor]
+cursor = &quot;CellForeground&quot;
+text = &quot;CellBackground&quot;
+
+[colors.footer_bar]
+background = &quot;#282a36&quot;
+foreground = &quot;#f8f8f1&quot;
+
+[colors.hints.end]
+background = &quot;#282a36&quot;
+foreground = &quot;#f1fa8c&quot;
+
+[colors.hints.start]
+background = &quot;#f1fa8c&quot;
+foreground = &quot;#22212d&quot;
+
+[colors.line_indicator]
+background = &quot;None&quot;
+foreground = &quot;None&quot;
+
+[colors.normal]
+black = &quot;#22212d&quot;
+blue = &quot;#9a7cff&quot;
+cyan = &quot;#38ffea&quot;
+green = &quot;#52ff6d&quot;
+magenta = &quot;#ff76c1&quot;
+red = &quot;#e64747&quot;
+white = &quot;#f8f8f1&quot;
+yellow = &quot;#ffff80&quot;
+
+[colors.primary]
+background = &quot;#22212d&quot;
+bright_foreground = &quot;#ffffff&quot;
+foreground = &quot;#f8f8f1&quot;
+
+[colors.search.focused_match]
+background = &quot;#ffb86c&quot;
+foreground = &quot;#44475a&quot;
+
+[colors.search.matches]
+background = &quot;#50fa7b&quot;
+foreground = &quot;#44475a&quot;
+
+[colors.selection]
+background = &quot;#44475a&quot;
+text = &quot;CellForeground&quot;
+
+[colors.vi_mode_cursor]
+cursor = &quot;CellForeground&quot;
+text = &quot;CellBackground&quot;
+
+[cursor.style]
+shape = &quot;Beam&quot;
+</code></pre>
+<h2 id=other>Other</h2>
+
+<pre><code class="language-toml">[window]
+dynamic_padding = true
+</code></pre>
+
+<p>Enabling dynamic padding affects how the window is rendered when it it's size is not an exact multiple of the "cell" size. With dynamic padding on, padding is added (relatively) evenly on all sides, instead of only at the bottom and right.<br>
+This option also enabled ueberzug to align images properly.</p>
+
+<pre><code class="language-toml">[window.dimensions]
+columns = 100
+lines = 25
+</code></pre>
+
+<p>Sets the default window size. Keep in mind a "cell" is not square.</p>
+
+<pre><code class="language-toml">[[hints.enabled]]
+command = &quot;xdg-open&quot;
+post_processing = true
+regex = &quot;(mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-&lt;&gt;\&quot;\\s{-}\\^⟨⟩`]+&quot;
+
+[hints.enabled.mouse]
+enabled = true
+mods = &quot;Control&quot;
+</code></pre>
+
+<p>Enabled clicking on links only when the <code>Ctrl</code> key is held down.</p>
+
+<pre><code class="language-toml">[[keyboard.bindings]]
+chars = &quot;\u001B[27;5;9~&quot;
+key = &quot;Tab&quot;
+mods = &quot;Control&quot;
+
+[[keyboard.bindings]]
+chars = &quot;\u001B[27;6;9~&quot;
+key = &quot;Tab&quot;
+mods = &quot;Control|Shift&quot;
+</code></pre>
+
+<p>Enabled <code>Ctrl + Tab</code> and <code>Ctrl + Shift + Tab</code> keyboard shortcuts, which normally don't work in terminals. In my setup this is used for switching tmux windows.</p>
+
+<pre><code class="language-toml">[[keyboard.bindings]]
+chars = &quot;\u0019&quot;
+key = &quot;z&quot;
+mods = &quot;Control|Shift&quot;
+</code></pre>
+
+<p>Enabled <code>Ctrl + Shift + Z</code> keyboard shortcut, used in Micro for <code>redo</code> functionality.</p>
+</div>
+</div><footer>footer test</footer>
+</div>
+</body>
+</html>
